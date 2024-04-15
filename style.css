@@ -1,0 +1,43 @@
+@import './css/reset.css';
+@import './css/header.css';
+@import './css/main-menu.css';
+@import './css/site-main.css';
+
+p,a, h1 {
+	font-family: "Roboto", sans-serif;
+}
+
+body {
+	background-color: rgb(246, 246, 250);
+	position: relative;
+	font-family: "Roboto", sans-serif;
+}
+
+.site {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	overflow: hidden;
+}
+
+.footer {
+	margin-top: auto;
+}
+
+.container {
+	padding: 0 70px;
+	width: 100%;
+	overflow: hidden;
+}
+
+@media (max-width: 768px) {
+	.container {
+		padding: 0 35px;
+	}
+}
+
+@media (max-width: 495px) {
+	.container {
+		padding: 0 15px;
+	}
+}

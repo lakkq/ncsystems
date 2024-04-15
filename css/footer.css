@@ -1,0 +1,222 @@
+.footer {
+  background-color: rgb(70, 8, 8);
+}
+.footer p {
+  color: rgb(246, 246, 250);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0%;
+  text-align: left;
+  padding: 5px 0 5px;
+}
+.footer h3 {
+  color: rgb(246, 246, 250);
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 28px;
+  text-align: left;
+  padding: 10px 0 0px;
+}
+.footer__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0;
+  position: relative;
+}
+.footer__logo {
+  position: relative;
+  padding: 0 20px 0 0;
+  margin: 0 20px 0 0;
+}
+.footer__logo img {
+  width: 170px;
+  height: auto;
+}
+.footer__logo::after {
+  content: " ";
+  background-color: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  height: 150%;
+  width: 1.5px;
+  top: -25%;
+  right: 0;
+}
+.footer__column-1 {
+  display: flex;
+  align-items: center;
+  flex-grow: 2;
+}
+.footer__column-2 {
+  margin: 0 0 0 20px;
+}
+.footer__column-2 p {
+  font-weight: 400;
+  line-height: 22px;
+  font-size: 16px;
+}
+.footer__column-2 p::first-line {
+  font-weight: 800;
+}
+
+@media (max-width: 1023px) {
+  .footer__logo img {
+    width: 140px;
+  }
+}
+@media (max-width: 768px) {
+  .footer p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-align: left;
+    padding: 5px 0 5px;
+  }
+  .footer h3 {
+    color: rgb(246, 246, 250);
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 28px;
+    text-align: left;
+    padding: 10px 0 0px;
+  }
+  .footer__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 0;
+    position: relative;
+  }
+  .footer__logo {
+    position: relative;
+    padding: 0 20px 0 0;
+    margin: 0 20px 10px 0;
+  }
+  .footer__logo img {
+    width: 140px;
+    height: auto;
+  }
+  .footer__logo::after {
+    display: none;
+  }
+  .footer__column-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex-grow: 2;
+  }
+  .footer__column-2 {
+    margin: 0 0 0 20px;
+    position: relative;
+  }
+  .footer__column-2 p {
+    font-weight: 400;
+    line-height: 22px;
+    font-size: 16px;
+  }
+  .footer__column-2 p::first-line {
+    font-weight: 800;
+  }
+  .footer__column-2::before {
+    content: " ";
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    height: 110%;
+    width: 1.5px;
+    top: -5%;
+    left: -10px;
+  }
+}
+@media (max-width: 495px) {
+  .footer {
+    background-color: rgb(70, 8, 8);
+  }
+  .footer p {
+    color: rgb(246, 246, 250);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-align: left;
+    padding: 5px 0 5px;
+  }
+  .footer h3 {
+    color: rgb(246, 246, 250);
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 28px;
+    text-align: left;
+    padding: 10px 0 0px;
+  }
+  .footer__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 0;
+    position: relative;
+  }
+  .footer__logo {
+    position: relative;
+    padding: 0 20px 0 0;
+    margin: 0 20px 10px 0;
+  }
+  .footer__logo img {
+    width: 120px;
+    height: auto;
+  }
+  .footer__logo::after {
+    content: " ";
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    height: 150%;
+    width: 1.5px;
+    top: -25%;
+    right: 0;
+  }
+  .footer__column-1 {
+    display: flex;
+    align-items: start;
+    flex-grow: 2;
+  }
+  .footer__column-2 {
+    margin: 0 0 0 20px;
+  }
+  .footer__column-2 p {
+    font-weight: 400;
+    line-height: 22px;
+    font-size: 14px;
+  }
+  .footer__column-2 p::first-line {
+    font-weight: 800;
+  }
+}
+@media (max-width: 420px) {
+  .footer__logo::after {
+    display: block;
+  }
+  .footer__row {
+    flex-direction: column;
+  }
+  .footer__column-1 {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  .footer__column-2 {
+    margin: 10px 0 0 0;
+  }
+  .footer__column-2 .footer__text {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-wrap: wrap;
+  }
+  .footer__column-2 .footer__text p {
+    width: 48%;
+  }
+  .footer__column-2::before {
+    display: none;
+  }
+}
