@@ -10,6 +10,7 @@ const checkerCitied = document.querySelector('#citied');
 const btnForward = document.querySelector('#page-forward');
 const btnBack = document.querySelector('#page-back');
 const articlesCount = document.querySelector('#all-articles');
+filter.addEventListener('click', () => {})
 
 let articles = collectArticles();
 let page = 1;

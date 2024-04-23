@@ -1,0 +1,66 @@
+.statistic-page__header {
+  background: rgb(25, 33, 94);
+  padding: 10px 0;
+  position: relative;
+  margin: 0 0 60px;
+}
+.statistic-page__header h1 {
+  color: rgb(255, 255, 255);
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 56px;
+  letter-spacing: 0%;
+}
+.statistic-page__block1 {
+  margin: 0 0 60px 0;
+}
+.statistic-page__block1-title h2 {
+  text-align: left;
+  left: 0;
+  transform: translate(0, 0);
+}
+.statistic-page__block1-title::after {
+  width: 90%;
+}
+.statistic-diagram__stolbiki {
+  height: 400px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.statistic-diagram__shkala {
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  height: 2px;
+}
+.statistic-diagram__column-wrapper {
+  margin: 0 10px 0 0;
+  flex: 1 1 100%;
+  position: relative;
+}
+.statistic-diagram__column-wrapper:last-child {
+  margin: 0 0 0 0;
+}
+.statistic-diagram__column {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  background-color: #AF0026;
+  position: absolute;
+  bottom: 0;
+  box-shadow: 0px 20px 40px 0px rgba(106, 106, 106, 0.25);
+  transition-duration: 500ms;
+}
+.statistic-diagram__column-year {
+  color: rgba(25, 33, 94, 0.5);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0%;
+  position: absolute;
+  bottom: -20px;
+}
+.statistic-diagram__column-count {
+  margin: 10px 0 0 0;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}

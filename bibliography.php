@@ -15,7 +15,7 @@ Template Name: Библиография
                     </h1>
                 </div>
                 <div class="bibliography-page__header-button">
-                    <a href="#">
+                    <a href="<?php echo get_site_url()."/библиография/библиографическая-статистика"?>">
                         <img src="<?php echo get_template_directory_uri() . "/img/statistics.svg" ?>" alt="">
                     </a>
                 </div>
@@ -91,7 +91,7 @@ Template Name: Библиография
     </div>
     <div class="container">
         <main class="bibliography-page__main">
-            <div class="bibliography-page__main-title">
+            <div class="bibliography-page__main-title main-title">
                 <h2>
                     Научные статьи и публикации
                 </h2>

@@ -31,11 +31,12 @@
 .bibliography-page__main {
   padding: 40px 0 60px;
 }
-.bibliography-page__main-title {
+
+.main-title {
   position: relative;
   margin: 0 0 50px 0;
 }
-.bibliography-page__main-title h2 {
+.main-title h2 {
   text-align: center;
   color: rgb(30, 24, 25);
   font-size: 28px;
@@ -46,7 +47,7 @@
   left: 50%;
   transform: translate(-50%, 0);
 }
-.bibliography-page__main-title h2::after {
+.main-title h2::after {
   content: " ";
   background-color: rgb(175, 0, 38);
   width: 100%;
@@ -56,7 +57,7 @@
   left: 0;
   z-index: 15;
 }
-.bibliography-page__main-title::after {
+.main-title::after {
   content: " ";
   background-color: rgba(30, 24, 25, 0.4);
   width: 80%;

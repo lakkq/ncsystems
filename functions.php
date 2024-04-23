@@ -191,6 +191,7 @@ function addStyles()
 	wp_enqueue_style('main-page-menues', get_template_directory_uri() . '/css/main-page-menues.css');
 	wp_enqueue_style('footer', get_template_directory_uri() . '/css/footer.css');
 	wp_enqueue_style('page-bibliography', get_template_directory_uri() . '/css/bibliography-page.css');
+	wp_enqueue_style('page-statistic', get_template_directory_uri() . '/css/statistic-page.css');
 }
 
 add_action('wp_footer', 'addScripts');
@@ -203,6 +204,8 @@ function addScripts()
 	wp_enqueue_script('footer', get_template_directory_uri() . '/js/footer.js');
 	wp_enqueue_script('artiсles-functions', get_template_directory_uri() . '/js/bibliography/functions.js');
 	wp_enqueue_script('bibliography', get_template_directory_uri() . '/js/bibliography/bibliography.js');
+	wp_enqueue_script('statistic-functions', get_template_directory_uri() . '/js/statistics/functions.js');
+	wp_enqueue_script('statistics', get_template_directory_uri() . '/js/statistics/statistics.js');
 }
 
 add_action('after_setup_theme', 'topMenu');
