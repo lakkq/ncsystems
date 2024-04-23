@@ -13,6 +13,20 @@ function createArraysYears(articles) {
     return years;
 }
 
+function createArrayCitied(articles) {
+    let citied = {};
+    for (let i = 0; i < articles.length; i++) {
+        if (!(articles[i].citiedByCount in citied)) {
+            citied[articles[i].citiedByCount] = [];
+            citied[articles[i].citiedByCount].push(articles[i]);
+        }
+        else {
+            citied[articles[i].citiedByCount].push(articles[i]);
+        }
+    }
+    
+    return citied;
+}
 
 function collectArticlesStatistics() {
     let articles = [];

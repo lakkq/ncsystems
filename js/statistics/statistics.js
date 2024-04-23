@@ -1,15 +1,18 @@
-document.querySelector('.statistic-page').addEventListener('click', () => {});
+document.querySelector('.statistic-page').addEventListener('click', () => { });
 
 let diagramYears = document.querySelector('#columns');
+let diagramCitied = document.querySelector('#columns2');
+
 let articlesArray = collectArticlesStatistics();
 let arrayYears = createArraysYears(articlesArray);
+let arrayCitied = sortArticlesByCitied(articlesArray);
+let citiedCount = Object.keys(arrayCitied).reverse();
 
-console.log(articlesArray.length);
+console.log(citiedCount);
+console.log(arrayCitied);
 
 let counterArticles = articlesArray.length;
 document.querySelector('#articles-counter').innerHTML = `${counterArticles}`;
-
-console.log(Object.keys(arrayYears));
 
 let maxArticlesPerYear = 0;
 
@@ -30,4 +33,20 @@ for (let i in arrayYears) {
     </div>
     `)
 }
+
+let maxCitiedArticle = arrayCitied[0].citiedByCount;
+console.log(maxCitiedArticle)
+
+for (let i = 0; i < 3; i++) {
+    let columnWidth = arrayCitied[i].citiedByCount * 100 / maxCitiedArticle;
+    diagramCitied.insertAdjacentHTML('beforeend', `
+    <div class="statistic2-diagram1__column-wrapper">
+        <div class="statistic2-diagram1__column-count"><p>${arrayCitied[i].citiedByCount}</p></div>
+        <div class="statistic2-diagram1__column" id="column2" style="width: ${columnWidth}%">
+            <p>${arrayCitied[i].title}</p>
+        </div>
+    </div>
+    `)
+}
+
 
