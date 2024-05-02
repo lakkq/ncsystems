@@ -206,6 +206,41 @@ function addScripts()
 	wp_enqueue_script('bibliography', get_template_directory_uri() . '/js/bibliography/bibliography.js');
 	wp_enqueue_script('statistic-functions', get_template_directory_uri() . '/js/statistics/functions.js');
 	wp_enqueue_script('statistics', get_template_directory_uri() . '/js/statistics/statistics.js');
+	
+	$custom_query = new WP_Query(array(
+		'post_type' => 'staff',
+		'posts_per_page' => -1, // Получить все записи
+	));
+	
+	$data_to_pass = array();
+	if ($custom_query->have_posts()) {
+		while ($custom_query->have_posts()) {
+			$custom_query->the_post();
+	
+			// Получаем кастомные поля
+			$inicials = get_post_meta(get_the_ID(), 'initials', true);
+			$id = get_post_meta(get_the_ID(), 'id', true);
+			$publications = get_post_meta(get_the_ID(), 'publications', true);
+			$avatarUrl = get_post_meta(get_the_ID(), 'avatarUrl', true);
+			$allCitied = get_post_meta(get_the_ID(), 'allCitied', true);
+			$mostPopular = get_post_meta(get_the_ID(), 'mostSitied', true);
+
+			$data_to_pass[] = array(
+				'name' => get_the_title(),
+				'inicials' => $inicials,
+				'id' => $id,
+				'publicainsions' => $publications,
+				'avatarUrl' => $avatarUrl,
+				'allCitied' => $allCitied,
+				'mostCitied' => $mostPopular,
+				// Добавьте другие элементы записи, которые вам нужны
+			);
+		}
+	}
+	
+	// Сброс данных поста
+	wp_reset_postdata();
+	wp_localize_script('statistics', 'authorsArray', $data_to_pass);
 }
 
 add_action('after_setup_theme', 'topMenu');
@@ -320,3 +355,7 @@ function register_post_types()
 	]);
 
 }
+
+
+
+

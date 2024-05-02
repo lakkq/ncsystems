@@ -43,8 +43,19 @@ Template Name: Библиографическая статистика
                             <div class="statistic2-diagram1__column" id="column2"></div>
                         </div> -->
                     </div>
-                    <div class="statistic-page__block2-diagram2 statistic2-diagram2">
-
+                    <div class="statistic-page__block2-diagram2 statistic2-diagram2" id="authors">
+                        <!-- <div class="statistic2-diagram2__item">
+                            <div class="statistic2-diagram2__item-avatar">
+                                <img src="<?php echo get_template_directory_uri() . "/img/default-user.png" ?>" alt="">
+                            </div>
+                            <div class="statistic2-diagram2__item-info">
+                                <div class="statistic2-diagram2__item-name"><p>Мартинов Григори Мартинов</p></div>
+                                <div class="statistic2-diagram2__item-body">
+                                    <p><b>Всего работ: </b>4321</p>
+                                    <p><b>Всего цитирований: </b>4321</p>
+                                </div>
+                            </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
