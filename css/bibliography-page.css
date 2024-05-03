@@ -155,6 +155,14 @@
 .bibliography-page__article-info > div {
   padding: 0 0 10px;
 }
+.bibliography-page__article-none {
+  padding: 30px 0 0 20px;
+  font-size: 20px;
+  font-weight: 550;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-align: left;
+}
 .active-article {
   animation-name: active-article;
   animation-duration: 500ms;

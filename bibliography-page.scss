@@ -184,6 +184,15 @@
         }
     }
 
+    &__article-none {
+        padding: 30px 0 0 20px;
+        font-size: 20px;
+        font-weight: 550;
+        line-height: 150%;
+        letter-spacing: 0%;
+        text-align: left;
+    }
+
     &__article-authors {}
 
     &__article-doi {}

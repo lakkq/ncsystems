@@ -154,70 +154,77 @@ function showArticles(articles, page) {
 function drawArticles(articles) {
     let articlesContainer = document.querySelector('#bibliography-page__articles');
     articlesContainer.innerHTML = '';
-    for (let i = 0; i < articles.length; i++) {
-        if (!articles[i].doi) {
-            articles[i].doi = 'не указано';
-        }
-        if (!articles[i].citiedByCount) {
-            articles[i].citiedByCount = 0;
-        }
+    if (!articles) {
         articlesContainer.insertAdjacentHTML('beforeend', `
-                    <div class="bibliography-page__article">
-                        <div class="bibliography-page__article-head">
-                            <div class="bibliography-page__article-arrow"></div>
-                            <div class="bibliography-page__article-title">
-                                <p>
-                                    ${articles[i].title}
-                                </p>
-                            </div>
-                            <div class="bibliography-page__article-inf-publ">
-                                <div class="bibliography-page__article-indexator">
-                                    ${articles[i].indexator}
+        <div class="bibliography-page__article-none">Ничего не найдено...</div>
+        `)
+    } else {
+        for (let i = 0; i < articles.length; i++) {
+            if (!articles[i].doi) {
+                articles[i].doi = 'не указано';
+            }
+            if (!articles[i].citiedByCount) {
+                articles[i].citiedByCount = 0;
+            }
+            articlesContainer.insertAdjacentHTML('beforeend', `
+                        <div class="bibliography-page__article">
+                            <div class="bibliography-page__article-head">
+                                <div class="bibliography-page__article-arrow"></div>
+                                <div class="bibliography-page__article-title">
+                                    <p>
+                                        ${articles[i].title}
+                                    </p>
                                 </div>
-                                <div class="bibliography-page__article-year">
-                                    ${articles[i].year}
+                                <div class="bibliography-page__article-inf-publ">
+                                    <div class="bibliography-page__article-indexator">
+                                        ${articles[i].indexator}
+                                    </div>
+                                    <div class="bibliography-page__article-year">
+                                        ${articles[i].year}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bibliography-page__article-info">
+                                <div class="bibliography-page__article-authors">
+                                    <p><b>Авторы: </b>
+                                        <span>${articles[i].authorsRow}</span>
+                                    </p>
+                                </div>
+                                <div class="bibliography-page__article-doi">
+                                    <p><b>doi: </b>
+                                        <span>
+                                        ${articles[i].doi}
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class="bibliography-page__article-journal">
+                                    <p><b>Журнал: </b>
+                                        <span>
+                                        ${articles[i].journal}
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class="bibliography-page__article-citied">
+                                    <p><b>Кол-во цитирования: </b>
+                                        <span>
+                                        ${articles[i].citiedByCount}
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class="bibliography-page__article-authorsID" style="display: none">
+                                    <p><b>ID авторов: </b>
+                                        <span>
+                                        ${articles[i].authorsID}
+                                        </span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="bibliography-page__article-info">
-                            <div class="bibliography-page__article-authors">
-                                <p><b>Авторы: </b>
-                                    <span>${articles[i].authorsRow}</span>
-                                </p>
-                            </div>
-                            <div class="bibliography-page__article-doi">
-                                <p><b>doi: </b>
-                                    <span>
-                                    ${articles[i].doi}
-                                    </span>
-                                </p>
-                            </div>
-                            <div class="bibliography-page__article-journal">
-                                <p><b>Журнал: </b>
-                                    <span>
-                                    ${articles[i].journal}
-                                    </span>
-                                </p>
-                            </div>
-                            <div class="bibliography-page__article-citied">
-                                <p><b>Кол-во цитирования: </b>
-                                    <span>
-                                    ${articles[i].citiedByCount}
-                                    </span>
-                                </p>
-                            </div>
-                            <div class="bibliography-page__article-authorsID" style="display: none">
-                                <p><b>ID авторов: </b>
-                                    <span>
-                                    ${articles[i].authorsID}
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-        `);
+            `);
+        }
+        addEventArticles();
     }
-    addEventArticles();
+    
 }
 
 // function collectArticles() {
