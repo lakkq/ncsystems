@@ -97,7 +97,7 @@ Template Name: Библиография
                 </h2>
             </div>
             <div class="bibliography-page__articles" id="bibliography-page__articles">
-                <?php
+                <!-- <?php
                 $posts = get_posts([
                     'numberposts' => -1,
                     'post_type' => 'article',
@@ -179,7 +179,7 @@ Template Name: Библиография
                     <?php
                 }
                 wp_reset_postdata();
-                ?>
+                ?> -->
             </div>
         </main>
         <div class="bibliography-page__pages">

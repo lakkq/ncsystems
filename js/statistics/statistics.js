@@ -1,16 +1,11 @@
-document.querySelector('.statistic-page').addEventListener('click', () => { });
-
 let diagramYears = document.querySelector('#columns');
 let diagramCitied = document.querySelector('#columns2');
 let diagramAuthors = document.querySelector('#authors');
 
-let articlesArray = collectArticlesStatistics();
+let articlesArray = articlesArrayPhp;
 let arrayYears = createArraysYears(articlesArray);
 let arrayCitied = sortArticlesByCitied(articlesArray);
 let citiedCount = Object.keys(arrayCitied).reverse();
-
-console.log(citiedCount);
-console.log(arrayCitied);
 
 let counterArticles = articlesArray.length;
 document.querySelector('#articles-counter').innerHTML = `${counterArticles}`;
@@ -35,11 +30,11 @@ for (let i in arrayYears) {
     `)
 }
 
-let maxCitiedArticle = arrayCitied[0].citiedByCount;
-console.log(maxCitiedArticle)
+let maxCitiedArticle = +arrayCitied[0].citiedByCount;
 
 for (let i = 0; i < 7; i++) {
-    let columnWidth = arrayCitied[i].citiedByCount * 100 / maxCitiedArticle;
+    console.log(maxCitiedArticle)
+    let columnWidth = +arrayCitied[i].citiedByCount * 100 / maxCitiedArticle;
     diagramCitied.insertAdjacentHTML('beforeend', `
     <div class="statistic2-diagram1__column-wrapper">
         <div class="statistic2-diagram1__column-count"><p>${arrayCitied[i].citiedByCount}</p></div>
@@ -55,8 +50,6 @@ for (let i = 0; i < 7; i++) {
         document.querySelector(`#column${i}`).style.width = `${columnWidth}%`;
     })
 }
-
-console.log(authorsArray);
 
 function bubbleSort(arr) {
     let len = arr.length;
@@ -76,7 +69,7 @@ function bubbleSort(arr) {
 
 for (let i = 0; i < 3; i++) {
     let authors = bubbleSort(authorsArray);
-    console.log(authors);
+
     diagramAuthors.insertAdjacentHTML('beforeend', `
     <div class="statistic2-diagram2__item">
         <div class="statistic2-diagram2__item-avatar">

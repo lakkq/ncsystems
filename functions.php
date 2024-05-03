@@ -250,6 +250,43 @@ function addScripts()
 	// Сброс данных поста
 	wp_reset_postdata();
 	wp_localize_script('statistics', 'authorsArray', $data_to_pass);
+
+	$articles = new WP_Query(array(
+		'post_type' => 'article',
+		'posts_per_page' => -1, // Получить все записи
+	));
+
+	$aricles_to_pass = array();
+	if ($articles->have_posts()) {
+		while ($articles->have_posts()) {
+			$articles->the_post();
+	
+			// Получаем кастомные поля
+			$authors = get_post_meta(get_the_ID(), 'authors', true);
+			$id_authors = get_post_meta(get_the_ID(), 'id_authors', true);
+			$doi = get_post_meta(get_the_ID(), 'doi', true);
+			$journal = get_post_meta(get_the_ID(), 'journal', true);
+			$citied_by_count = get_post_meta(get_the_ID(), 'citied-by-count', true);
+			$indexator = get_post_meta(get_the_ID(), 'indexator', true);
+			$year = get_post_meta(get_the_ID(), 'year', true);
+			$id = get_post_meta(get_the_ID(), 'id', true);
+
+			$articles_to_pass[] = array(
+				'title' => get_the_title(),
+				'indexator' => $indexator,
+				'doi' => $doi,
+				'authorsRow' => $authors,
+				'authorsID' => $id_authors,
+				'year' => $year,
+				'journal' => $journal,
+				'citiedByCount' => $citied_by_count,
+				// Добавьте другие элементы записи, которые вам нужны
+			);
+		}
+	}
+	wp_reset_postdata();
+	wp_localize_script('bibliography', 'articlesArrayPhp', $articles_to_pass);
+	wp_localize_script('statistics', 'articlesArrayPhp', $articles_to_pass);
 }
 
 add_action('after_setup_theme', 'topMenu');

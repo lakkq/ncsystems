@@ -79,6 +79,7 @@
   height: 650px;
   display: grid;
   grid-template-columns: 3fr 2fr;
+  margin: 0 0 70px;
 }
 .statistic2-diagram1 {
   position: relative;

@@ -12,10 +12,16 @@ const btnBack = document.querySelector('#page-back');
 const articlesCount = document.querySelector('#all-articles');
 filter.addEventListener('click', () => {})
 
-let articles = collectArticles();
+let articles = articlesArrayPhp;
+console.log(articles);
+articles.forEach((article) => {
+    article.authorsID = article.authorsID.split(',');
+})
+
 let page = 1;
 articles = sortArticlesByYears(articles);
 let filteredArticles = sortArticlesByYears(articles);
+
 
 showArticles(filteredArticles, page);
 

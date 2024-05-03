@@ -1,6 +1,7 @@
 function sortArticlesByCitied(articles) {
     let citied = {};
     for (let i = 0; i < articles.length; i++) {
+        articles[i].citiedByCount = +articles[i].citiedByCount;
         if (!(articles[i].citiedByCount in citied)) {
             citied[articles[i].citiedByCount] = [];
             citied[articles[i].citiedByCount].push(articles[i]);
@@ -9,7 +10,6 @@ function sortArticlesByCitied(articles) {
             citied[articles[i].citiedByCount].push(articles[i]);
         }
     }
-    console.log(citied);
     let newArticles = [];
     keys = Object.keys(citied).reverse();
     keys.forEach((key) => {
@@ -24,13 +24,13 @@ function sortArticlesByCitied(articles) {
             newArticles.push(article);
         })
     }
-
     return newArticles;
 }
 
 function sortArticlesByYears(articles) {
     let years = {};
     for (let i = 0; i < articles.length; i++) {
+        articles[i].year = +articles[i].year;
         if (!(articles[i].year in years)) {
             years[articles[i].year] = [];
             years[articles[i].year].push(articles[i]);
@@ -128,7 +128,7 @@ function showArticles(articles, page) {
 
     if (page === 2 || page === 1) {
         document.querySelector('.bibliography-page__points1').style.display = 'none';
-    } else  document.querySelector('.bibliography-page__points1').style.display = 'block';
+    } else document.querySelector('.bibliography-page__points1').style.display = 'block';
 
     if (page === newArticles.length) {
         btnForward.style.display = 'none';
@@ -147,14 +147,20 @@ function showArticles(articles, page) {
     } else document.querySelector('.bibliography-page__points2').style.display = 'block';
 
     document.querySelector('#lastPage').children[0].innerHTML = newArticles.length;
-    
-    drawArticles(newArticles[page-1]);
+
+    drawArticles(newArticles[page - 1]);
 }
 
 function drawArticles(articles) {
     let articlesContainer = document.querySelector('#bibliography-page__articles');
     articlesContainer.innerHTML = '';
     for (let i = 0; i < articles.length; i++) {
+        if (!articles[i].doi) {
+            articles[i].doi = 'не указано';
+        }
+        if (!articles[i].citiedByCount) {
+            articles[i].citiedByCount = 0;
+        }
         articlesContainer.insertAdjacentHTML('beforeend', `
                     <div class="bibliography-page__article">
                         <div class="bibliography-page__article-head">
@@ -214,67 +220,67 @@ function drawArticles(articles) {
     addEventArticles();
 }
 
-function collectArticles() {
-    let articles = [];
-    let titles = document.querySelectorAll('.bibliography-page__article-title');
-    let indexators = document.querySelectorAll('.bibliography-page__article-indexator');
-    let doies = document.querySelectorAll('.bibliography-page__article-doi');
-    let authorsRows = document.querySelectorAll('.bibliography-page__article-authors');
-    let authorsIDs = document.querySelectorAll('.bibliography-page__article-authorsID');
-    let years = document.querySelectorAll('.bibliography-page__article-year');
-    let journals = document.querySelectorAll('.bibliography-page__article-journal');
-    let citieds = document.querySelectorAll('.bibliography-page__article-citied');
-    document.querySelectorAll('.bibliography-page__article').forEach((article) => {
-        let publication = {}
-        titles.forEach((title) => {
-            if (article.contains(title)) {
-                publication['title'] = title.children[0].innerText;
-            }
-        })
-        indexators.forEach(indexator => {
-            if (article.contains(indexator)) {
-                publication['indexator'] = indexator.innerText;
-            }
-        })
-        doies.forEach(doi => {
-            if (article.contains(doi)) {
-                publication['doi'] = doi.children[0].children[1].textContent.slice(4, -1).trim();
-            }
-        })
-        authorsRows.forEach(authorsRow => {
-            if (article.contains(authorsRow)) {
-                publication['authorsRow'] = authorsRow.children[0].children[1].innerText;
-            }
-        })
-        authorsIDs.forEach(authorsID => {
-            if (article.contains(authorsID)) {
-                publication['authorsID'] = authorsID.children[0].children[1].textContent.slice(4, -1).trim().split(',');
-            }
-        })
-        years.forEach(year => {
-            if (article.contains(year)) {
-                publication['year'] = year.textContent.slice(4, -1).trim();
-            }
-        })
-        journals.forEach(journal => {
-            if (article.contains(journal)) {
-                publication['journal'] = journal.children[0].children[1].textContent;
-            }
-        })
-        citieds.forEach(citied => {
-            if (article.contains(citied)) {
-                if (citied.children[0].children[1].innerText !== 'не указано') {
-                    publication['citiedByCount'] = +citied.children[0].children[1].innerText;
-                } else {
-                    publication['citiedByCount'] = citied.children[0].children[1].innerText;
-                }
+// function collectArticles() {
+//     let articles = [];
+//     let titles = document.querySelectorAll('.bibliography-page__article-title');
+//     let indexators = document.querySelectorAll('.bibliography-page__article-indexator');
+//     let doies = document.querySelectorAll('.bibliography-page__article-doi');
+//     let authorsRows = document.querySelectorAll('.bibliography-page__article-authors');
+//     let authorsIDs = document.querySelectorAll('.bibliography-page__article-authorsID');
+//     let years = document.querySelectorAll('.bibliography-page__article-year');
+//     let journals = document.querySelectorAll('.bibliography-page__article-journal');
+//     let citieds = document.querySelectorAll('.bibliography-page__article-citied');
+//     document.querySelectorAll('.bibliography-page__article').forEach((article) => {
+//         let publication = {}
+//         titles.forEach((title) => {
+//             if (article.contains(title)) {
+//                 publication['title'] = title.children[0].innerText;
+//             }
+//         })
+//         indexators.forEach(indexator => {
+//             if (article.contains(indexator)) {
+//                 publication['indexator'] = indexator.innerText;
+//             }
+//         })
+//         doies.forEach(doi => {
+//             if (article.contains(doi)) {
+//                 publication['doi'] = doi.children[0].children[1].textContent.slice(4, -1).trim();
+//             }
+//         })
+//         authorsRows.forEach(authorsRow => {
+//             if (article.contains(authorsRow)) {
+//                 publication['authorsRow'] = authorsRow.children[0].children[1].innerText;
+//             }
+//         })
+//         authorsIDs.forEach(authorsID => {
+//             if (article.contains(authorsID)) {
+//                 publication['authorsID'] = authorsID.children[0].children[1].textContent.slice(4, -1).trim().split(',');
+//             }
+//         })
+//         years.forEach(year => {
+//             if (article.contains(year)) {
+//                 publication['year'] = year.textContent.slice(4, -1).trim();
+//             }
+//         })
+//         journals.forEach(journal => {
+//             if (article.contains(journal)) {
+//                 publication['journal'] = journal.children[0].children[1].textContent;
+//             }
+//         })
+//         citieds.forEach(citied => {
+//             if (article.contains(citied)) {
+//                 if (citied.children[0].children[1].innerText !== 'не указано') {
+//                     publication['citiedByCount'] = +citied.children[0].children[1].innerText;
+//                 } else {
+//                     publication['citiedByCount'] = citied.children[0].children[1].innerText;
+//                 }
 
-            }
-        })
-        articles.push(publication);
-    })
-    return articles;
-}
+//             }
+//         })
+//         articles.push(publication);
+//     })
+//     return articles;
+// }
 
 function addEventArticles() {
     document.querySelectorAll('.bibliography-page__article').forEach((article) => {

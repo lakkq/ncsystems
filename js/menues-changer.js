@@ -1,7 +1,6 @@
 const menuesBtn = document.querySelector('#menues__button');
 const teachingMenu = document.querySelector('.teaching');
 const bibliographyMenu = document.querySelector('.bibliography');
-console.log(menuesBtn)
 
 function changeBibliographyMenues() {
     teachingMenu.classList.toggle('active-menues');

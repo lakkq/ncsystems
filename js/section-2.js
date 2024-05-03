@@ -33,7 +33,6 @@ const observerTargets = new IntersectionObserver(entries => {
                 article.classList.add('showNews');
                 article.style.animationDelay = `${delay}ms`;
                 delay += 200;
-                console.log(article);
             })
         }
     });
