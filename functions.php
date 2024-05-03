@@ -198,14 +198,23 @@ add_action('wp_footer', 'addScripts');
 function addScripts()
 {
 	wp_enqueue_script('main-menu', get_template_directory_uri() . '/js/main-menu.js');
-	wp_enqueue_script('section-1', get_template_directory_uri() . '/js/section-1.js');
-	wp_enqueue_script('menues-changer', get_template_directory_uri() . '/js/menues-changer.js');
-	wp_enqueue_script('section-2', get_template_directory_uri() . '/js/section-2.js');
 	wp_enqueue_script('footer', get_template_directory_uri() . '/js/footer.js');
-	wp_enqueue_script('artiсles-functions', get_template_directory_uri() . '/js/bibliography/functions.js');
-	wp_enqueue_script('bibliography', get_template_directory_uri() . '/js/bibliography/bibliography.js');
-	wp_enqueue_script('statistic-functions', get_template_directory_uri() . '/js/statistics/functions.js');
-	wp_enqueue_script('statistics', get_template_directory_uri() . '/js/statistics/statistics.js');
+	if (is_front_page()) {
+		wp_enqueue_script('section-1', get_template_directory_uri() . '/js/section-1.js');
+		wp_enqueue_script('menues-changer', get_template_directory_uri() . '/js/menues-changer.js');
+		wp_enqueue_script('section-2', get_template_directory_uri() . '/js/section-2.js');
+	}
+
+	if (is_page('Библиография')) {
+		wp_enqueue_script('artiсles-functions', get_template_directory_uri() . '/js/bibliography/functions.js');
+		wp_enqueue_script('bibliography', get_template_directory_uri() . '/js/bibliography/bibliography.js');
+	}
+
+	if (is_page('Библиографическая статистика')) {
+		wp_enqueue_script('artiсles-functions', get_template_directory_uri() . '/js/bibliography/functions.js');
+		wp_enqueue_script('statistic-functions', get_template_directory_uri() . '/js/statistics/functions.js');
+		wp_enqueue_script('statistics', get_template_directory_uri() . '/js/statistics/statistics.js');
+	}
 	
 	$custom_query = new WP_Query(array(
 		'post_type' => 'staff',
@@ -353,7 +362,6 @@ function register_post_types()
 		'rewrite' => true,
 		'query_var' => true,
 	]);
-
 }
 
 

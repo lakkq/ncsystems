@@ -90,3 +90,4 @@ function collectArticlesStatistics() {
     document.querySelector('.bibliography-page__articles').innerHTML = '';
     return articles;
 }
+
