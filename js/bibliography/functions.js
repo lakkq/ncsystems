@@ -120,11 +120,33 @@ function showArticles(articles, page) {
 
     if (page === 1) {
         btnBack.style.display = 'none';
-    } else btnBack.style.display = 'block';
+        document.querySelector('#firstPage').style.display = 'none';
+    } else {
+        btnBack.style.display = 'block';
+        document.querySelector('#firstPage').style.display = 'block';
+    };
+
+    if (page === 2 || page === 1) {
+        document.querySelector('.bibliography-page__points1').style.display = 'none';
+    } else  document.querySelector('.bibliography-page__points1').style.display = 'block';
 
     if (page === newArticles.length) {
         btnForward.style.display = 'none';
     } else btnForward.style.display = 'block';
+
+    if (page === newArticles.length) {
+        document.querySelector('.bibliography-page__points2').style.display = 'none';
+        document.querySelector('#lastPage').style.display = 'none';
+    } else {
+        document.querySelector('.bibliography-page__points2').style.display = 'block';
+        document.querySelector('#lastPage').style.display = 'block';
+    }
+
+    if (page === newArticles.length - 1 || page === newArticles.length) {
+        document.querySelector('.bibliography-page__points2').style.display = 'none';
+    } else document.querySelector('.bibliography-page__points2').style.display = 'block';
+
+    document.querySelector('#lastPage').children[0].innerHTML = newArticles.length;
     
     drawArticles(newArticles[page-1]);
 }

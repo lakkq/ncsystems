@@ -627,6 +627,56 @@
         justify-content: center;
     }
 
+    &__first-page {
+        p  {
+            display: inline-block;
+            padding: 3px 0 0;
+            width: 30px;
+            height: 30px;
+            border: 3px solid rgb(175, 0, 38);
+            margin: 0 0 0 7px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 750;
+            text-align: center;
+            color: rgb(175, 0, 38);
+        }
+    }
+
+    &__last-page {
+        p {
+            display: inline-block;
+            padding: 3px 0 0;
+            width: 30px;
+            height: 30px;
+            border: 3px solid rgb(175, 0, 38);
+            margin: 0 7px 0 0;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 750;
+            text-align: center;
+            color: rgb(175, 0, 38);
+        }
+    }
+
+    &__points1, &__points2 {
+        font-size: 18px;
+        font-weight: 850;
+        text-align: center;
+        color: rgb(175, 0, 38);
+        width: 30px;
+        height: 30px;
+        padding: 10px 0 0;
+    }
+
+    &__points1 {
+        margin: 0 -7px 0 0;
+    }
+
+    &__points2 {
+        margin: 0 0 0 -7px;
+    }
+
     &__pages-back {
         width: 30px;
         height: 30px;

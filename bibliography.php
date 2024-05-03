@@ -187,7 +187,11 @@ Template Name: Библиография
                 <div class="bibliography-page__pages-back" id="page-back">
                     <div class="bibliography-page__pages-arrow"></div>
                 </div>
+                <div class="bibliography-page__first-page" id="firstPage"><p>1</p></div>
+                <div class="bibliography-page__points1">...</div>
                 <div class="bibliography-page__pages-number"></div>
+                <div class="bibliography-page__points2">...</div>
+                <div class="bibliography-page__last-page" id="lastPage"><p>10</p></div>
                 <div class="bibliography-page__pages-forward" id="page-forward">
                     <div class="bibliography-page__pages-arrow"></div>
                 </div>
