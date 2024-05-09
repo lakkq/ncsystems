@@ -528,6 +528,9 @@
   align-items: center;
   justify-content: center;
 }
+.bibliography-page__first-page {
+  cursor: pointer;
+}
 .bibliography-page__first-page p {
   display: inline-block;
   padding: 3px 0 0;
@@ -540,6 +543,15 @@
   font-weight: 750;
   text-align: center;
   color: rgb(175, 0, 38);
+  transition-duration: 200ms;
+}
+.bibliography-page__first-page p:hover {
+  border: 3px solid rgba(70, 8, 8, 0.653);
+  background-color: rgb(175, 0, 38);
+  color: white;
+}
+.bibliography-page__last-page {
+  cursor: pointer;
 }
 .bibliography-page__last-page p {
   display: inline-block;
@@ -553,6 +565,12 @@
   font-weight: 750;
   text-align: center;
   color: rgb(175, 0, 38);
+  transition-duration: 200ms;
+}
+.bibliography-page__last-page p:hover {
+  border: 3px solid rgba(70, 8, 8, 0.653);
+  background-color: rgb(175, 0, 38);
+  color: white;
 }
 .bibliography-page__points1, .bibliography-page__points2 {
   font-size: 18px;

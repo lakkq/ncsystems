@@ -105,9 +105,10 @@ function sortPeriod(articles, period) {
     return sortedArticles;
 }
 
+const chunkSize = 50;
+
 function showArticles(articles, page) {
     articlesCount.innerHTML = `${articles.length}`;
-    const chunkSize = 50;
     if (articles.length > chunkSize) {
         document.querySelector('.bibliography-page__pages').style.display = 'block';
         document.querySelector('.bibliography-page__pages-number').innerHTML = page;

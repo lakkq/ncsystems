@@ -13,7 +13,7 @@ const articlesCount = document.querySelector('#all-articles');
 filter.addEventListener('click', () => {})
 
 let articles = articlesArrayPhp;
-console.log(articles);
+
 articles.forEach((article) => {
     article.authorsID = article.authorsID.split(',');
 })
@@ -117,6 +117,18 @@ btnBack.addEventListener('click', () => {
 
 btnForward.addEventListener('click', () => {
     page++;
+    showArticles(filteredArticles, page);
+    window.scrollTo(0, 0);
+})
+
+document.querySelector('#firstPage').addEventListener('click', () => {
+    page = 1;
+    showArticles(filteredArticles, page);
+    window.scrollTo(0, 0);
+})
+
+document.querySelector('#lastPage').addEventListener('click', () => {    
+    page = Math.ceil(filteredArticles.length/50);
     showArticles(filteredArticles, page);
     window.scrollTo(0, 0);
 })

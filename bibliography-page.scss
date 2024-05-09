@@ -637,6 +637,7 @@
     }
 
     &__first-page {
+        cursor: pointer;
         p  {
             display: inline-block;
             padding: 3px 0 0;
@@ -649,10 +650,18 @@
             font-weight: 750;
             text-align: center;
             color: rgb(175, 0, 38);
+            transition-duration: 200ms;
+
+            &:hover {
+                border: 3px solid rgba(70, 8, 8, 0.653);
+                background-color: rgb(175, 0, 38);
+                color: white;
+            }
         }
     }
 
     &__last-page {
+        cursor: pointer;
         p {
             display: inline-block;
             padding: 3px 0 0;
@@ -665,6 +674,13 @@
             font-weight: 750;
             text-align: center;
             color: rgb(175, 0, 38);
+            transition-duration: 200ms;
+
+            &:hover {
+                border: 3px solid rgba(70, 8, 8, 0.653);
+                background-color: rgb(175, 0, 38);
+                color: white;
+            }
         }
     }
 
