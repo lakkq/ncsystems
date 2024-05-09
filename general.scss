@@ -14,10 +14,14 @@
 }
 
 .page-body {
-    padding: 50px 0;
+    padding: 30px 0 50px;
 
     .container>* {
-        margin: 30px 0;
+        margin: 15px 0;
+    }
+
+    .wp-block-separator {
+        margin: 0;
     }
 
     p {
@@ -26,28 +30,16 @@
         line-height: 140%;
     }
 
-    .aligncenter { //Выравнивание таблицы посередине
-        margin: 30px auto;
+    .aligncenter {
+        //Выравнивание таблицы посередине
+        margin: 0 auto;
     }
 
-    ul {}
-
     li {
-        position: relative;
-        padding: 0 0 0 15px;
         margin: 0 0 15px 15px;
-
-        &::before {
-            content: '';
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background-color: rgb(175, 0, 38);
-            position: absolute;
-            top: 7px;
-            left: 0;
-            transform: translate(0, -50%);
-        }
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 140%;
 
         &:first-child {
             margin: 20px 0 15px 15px;
@@ -58,11 +50,39 @@
         }
     }
 
+    ul {
+        li {
+            position: relative;
+            padding: 0 0 0 15px;
+
+            &::before {
+                content: '';
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background-color: rgb(175, 0, 38);
+                position: absolute;
+                top: 13px;
+                left: 0;
+                transform: translate(0, -50%);
+            }
+        }
+    }
+
+    ol {
+        li {
+            &::marker {
+                color: rgb(175, 0, 38);
+                font-weight: 800;
+            }
+        }
+    }
+
     .wp-block-heading {
         font-size: 24px;
         font-weight: 600;
         line-height: 140%;
-        margin: 15px 0 30px 0;
+        margin: 15px 0 15px 0;
         position: relative;
     }
 
@@ -79,6 +99,18 @@
         }
     }
 
+    p>a {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 140%;
+        color: rgb(25, 33, 94);
+        text-decoration: underline rgb(25, 33, 94);
+
+        &:hover {
+            text-decoration: underline rgb(175, 0, 38);
+        }
+    }
+
     .wp-block-file {
         a {
             &:first-child {
@@ -86,7 +118,7 @@
                 font-weight: 700;
                 line-height: 140%;
                 color: rgb(25, 33, 94);
-                text-decoration: underline rgb(25, 33, 94);;
+                text-decoration: underline rgb(25, 33, 94);
 
                 &:hover {
                     text-decoration: underline rgb(175, 0, 38);
@@ -119,10 +151,10 @@
         &__content {
             padding: 0;
 
-            p + p {
-                margin: 0 0 30px 0;
+            p+p {
+                margin: 30px 0 0 0;
 
-                &:last-child {
+                &:first-child {
                     margin: 0;
                 }
             }
@@ -135,16 +167,47 @@
         }
     }
 
-    .no-border { //Пользовательский класс, чтоб убрать рамку фото
+    .alignright {
+        position: relative;
+        right: 0;
+    }
+
+    .wp-block-image {
+
+        display: block;
+        // margin: 0 auto;
+
+        img {
+            box-shadow: 0px 20px 40px 0px rgba(106, 106, 106, 0.25);
+            border-radius: 10px;
+            border: 5px solid rgba(25, 33, 94, 0.829);
+        }
+    }
+
+    .no-border {
+
+        //Пользовательский класс, чтоб убрать рамку фото
         .wp-block-media-text__media {
+            box-shadow: none;
+            border-radius: 0;
+            border: none;
+        }
+
+        img {
             box-shadow: none;
             border-radius: 0;
             border: none;
         }
     }
 
-    .alignright {
-        position: relative;
-        right: 0;
+    .black-border {
+        .wp-block-media-text__media {
+            border: 3px solid black;
+        }
+
+        img {
+            border: 3px solid black;
+            border-radius: 7px;
+        }
     }
 }
