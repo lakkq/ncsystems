@@ -74,9 +74,9 @@ get_header();
 						setup_postdata($post);
 						?>
 						<div class="SMI-article" id="SMI-article">
-							<a href="<?php the_title(); ?>">
+							<a href="<?php the_field('url'); ?>">
 								<p>
-									<?php the_excerpt(); ?>
+									<?php the_title(); ?>
 								</p>
 							</a>
 						</div>
@@ -200,7 +200,7 @@ get_header();
 									технологических процессов и производств», бакалавров по направлению 550200
 									«Автоматизация и управление», магистров по магистерской программе 550207
 									«Распределенные компьютерные информационно-управляющие системы».
-								</p>								
+								</p>
 							</div>
 						</div>
 					</div>
