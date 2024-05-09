@@ -14,7 +14,10 @@ Template Name: Библиография
                         <?php wp_title('') ?>
                     </h1>
                 </div>
-                <div class="bibliography-page__header-button">
+                <div class="bibliography-page__header-button" id="statistic-btn">
+                    <div class="bibliography-page__header-button-sign" id="statistic-sign">
+                        <p>Статистика</p>
+                    </div>
                     <a href="<?php echo get_site_url()."/библиография/библиографическая-статистика"?>">
                         <img src="<?php echo get_template_directory_uri() . "/img/statistics.svg" ?>" alt="">
                     </a>

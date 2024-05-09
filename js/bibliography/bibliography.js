@@ -10,7 +10,7 @@ const checkerCitied = document.querySelector('#citied');
 const btnForward = document.querySelector('#page-forward');
 const btnBack = document.querySelector('#page-back');
 const articlesCount = document.querySelector('#all-articles');
-filter.addEventListener('click', () => {})
+filter.addEventListener('click', () => { })
 
 let articles = articlesArrayPhp;
 
@@ -95,7 +95,7 @@ function useFilter() {
     if (proverka) {
         if (document.querySelector('#I').checked) {
             filteredArticles = sortoincidenceAnd(filteredArticles, authorsId);
-    
+
         } else {
             filteredArticles = sortoincidenceOr(filteredArticles, authorsId);
         }
@@ -127,8 +127,16 @@ document.querySelector('#firstPage').addEventListener('click', () => {
     window.scrollTo(0, 0);
 })
 
-document.querySelector('#lastPage').addEventListener('click', () => {    
-    page = Math.ceil(filteredArticles.length/50);
+document.querySelector('#lastPage').addEventListener('click', () => {
+    page = Math.ceil(filteredArticles.length / 50);
     showArticles(filteredArticles, page);
     window.scrollTo(0, 0);
+})
+
+
+document.querySelector('#statistic-btn').addEventListener('mouseenter', () => {
+    document.querySelector('#statistic-sign').style.opacity = '1';
+})
+document.querySelector('#statistic-btn').addEventListener('mouseleave', () => {
+    document.querySelector('#statistic-sign').style.opacity = '0';
 })

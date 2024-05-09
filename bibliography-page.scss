@@ -1,12 +1,13 @@
 .bibliography-page {
     &__header {
         background: rgb(25, 33, 94);
-        padding: 10px 0;
         position: relative;
         z-index: 98;
+        height: 76px;
     }
 
     &__header-row {
+        height: 76px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -23,10 +24,53 @@
     }
 
     &__header-button {
+        height: 100%;
+        position: relative;
+
         a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 0 10px;
+            margin: 0 -10px 0 0;
+            transition-duration: 500ms;
+
             img {
                 width: 50px;
                 height: 50px;
+            }
+
+            &:hover {
+                background: rgb(15, 20, 59);
+            }
+        }
+
+        &-sign {
+            display: block;
+            opacity: 0;
+            transition-duration: 200ms;
+            position: absolute;
+            padding: 5px;
+            top: 35%;
+            right: 100%;
+            transform: translate(0, -50%);
+            background-color: rgba(255, 255, 255, 0.999);
+            color: black;
+            font-weight: 750;
+            border-left: 6px solid rgb(175, 0, 38);
+            border-right: 6px solid rgb(175, 0, 38);
+
+            &::after {
+                content: '';
+                background-color: rgb(175, 0, 38);
+                width: 7px;
+                height: 7px;
+                position: absolute;
+                top: 50%;
+                left: 100%;
+                transform: translate(25%, -50%) rotate(45deg);
+
             }
         }
     }
@@ -42,7 +86,7 @@
 
     &__main {
         padding: 40px 0 60px;
-    } 
+    }
 }
 
 .main-title {
@@ -638,7 +682,8 @@
 
     &__first-page {
         cursor: pointer;
-        p  {
+
+        p {
             display: inline-block;
             padding: 3px 0 0;
             width: 30px;
@@ -662,6 +707,7 @@
 
     &__last-page {
         cursor: pointer;
+
         p {
             display: inline-block;
             padding: 3px 0 0;
@@ -684,7 +730,8 @@
         }
     }
 
-    &__points1, &__points2 {
+    &__points1,
+    &__points2 {
         font-size: 18px;
         font-weight: 850;
         text-align: center;

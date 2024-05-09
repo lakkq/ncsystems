@@ -1,10 +1,11 @@
 .bibliography-page__header {
   background: rgb(25, 33, 94);
-  padding: 10px 0;
   position: relative;
   z-index: 98;
+  height: 76px;
 }
 .bibliography-page__header-row {
+  height: 76px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,9 +17,50 @@
   line-height: 56px;
   letter-spacing: 0%;
 }
+.bibliography-page__header-button {
+  height: 100%;
+  position: relative;
+}
+.bibliography-page__header-button a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 10px;
+  margin: 0 -10px 0 0;
+  transition-duration: 500ms;
+}
 .bibliography-page__header-button a img {
   width: 50px;
   height: 50px;
+}
+.bibliography-page__header-button a:hover {
+  background: rgb(15, 20, 59);
+}
+.bibliography-page__header-button-sign {
+  display: block;
+  opacity: 0;
+  transition-duration: 200ms;
+  position: absolute;
+  padding: 5px;
+  top: 35%;
+  right: 100%;
+  transform: translate(0, -50%);
+  background-color: rgba(255, 255, 255, 0.999);
+  color: black;
+  font-weight: 750;
+  border-left: 6px solid rgb(175, 0, 38);
+  border-right: 6px solid rgb(175, 0, 38);
+}
+.bibliography-page__header-button-sign::after {
+  content: "";
+  background-color: rgb(175, 0, 38);
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(25%, -50%) rotate(45deg);
 }
 .bibliography-page .bibliography-page__all-articles {
   position: absolute;
