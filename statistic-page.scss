@@ -30,7 +30,12 @@
         }
     }
 
-    &__block1-diagram {}
+    &__block1-wrapper {}
+
+    &__block1-diagram {
+        min-width: 1000px;
+        width: 100%;
+    }
 }
 
 .statistic-diagram {
@@ -38,12 +43,14 @@
         height: 400px;
         display: flex;
         flex-wrap: nowrap;
+        // margin: 0 0 20px 0;
     }
 
     &__shkala {
         background-color: rgb(0, 0, 0);
         width: 100%;
         height: 2px;
+        // margin: -20px 0 0 0;
     }
 
     &__column-wrapper {
@@ -280,6 +287,226 @@
 
         p {
             margin: 0 0 10px 0;
+        }
+    }
+}
+
+.title-ad {
+    display: none;
+}
+
+@media (max-width: 1109px) {
+    .statistic-page {
+        &__block1-wrapper {
+            overflow: scroll;
+            padding: 0 0 25px 0;
+        }
+    }
+
+    .statistic2-diagram2 {
+
+        padding: 0 0 0 30px;
+
+        &__item {
+            width: 100%;
+            height: 30%;
+            max-width: 410px;
+            border-radius: 30px;
+            padding: 15px;
+            margin: 0 0 30px 0;
+        }
+
+        &__item-avatar {
+            width: 120px;
+            height: 120px;
+            overflow: hidden;
+            border-radius: 50%;
+            margin: 0 15px 0 0;
+            flex-shrink: 0;
+            align-self: center;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__item-info {
+            position: relative;
+        }
+
+        &__item-name {
+            p {
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 25px;
+            }
+        }
+
+        &__item-body {
+            position: absolute;
+            bottom: 0;
+
+            p {
+                font-size: 16px;
+                margin: 0 0 10px 0;
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .statistic-page {
+        &__header {
+            padding: 0;
+            margin: 0 0 40px;
+            height: 66px;
+
+            h1 {
+                position: relative;
+                top: 50%;
+                transform: translate(0, -50%);
+                font-size: 26px;
+                font-weight: 600;
+            }
+        }
+
+        &__block1 {
+            margin: 0 0 60px 0;
+        }
+
+        &__block1-title {
+            h2 {
+                text-align: left;
+                left: 0;
+                transform: translate(0, 0);
+                font-size: 24px;
+            }
+
+            &::after {
+                width: 90%;
+            }
+        }
+
+        &__block1-diagram {}
+    }
+
+    .statistic-page {
+        &__block2-title {
+            h2 {
+                font-size: 24px
+            }
+        }
+
+        &__block2-diagrams {
+            height: auto;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto;
+            margin: 0 0 50px;
+        }
+
+        &__block2-diagram1 {
+            margin: 0 0 40px;
+        }
+
+        &__block2-diagram2 {}
+    }
+
+    .just-title {
+        display: none;
+    }
+
+    .title-ad {
+        display: block;
+    }
+
+    .statistic2-diagram1 {
+
+        padding: 0 0 0 0;
+
+        &__column-wrapper {
+            margin: 0 0 15px;
+        }
+
+        &__column {
+            height: 58px;
+
+            p {
+                padding: 0 10px 0 20px;
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 120%;
+            }
+        }
+
+        &__column-count {
+            width: 30px;
+
+            p {
+                width: 50px;
+                top: 50%;
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 42px;
+                transform: rotate(90deg) translate(-45%, 15px);
+            }
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+
+    .statistic2-diagram2 {
+
+        padding: 0 0 0;
+
+        &__item {
+            width: 100%;
+            max-width: 410px;
+            border-radius: 30px;
+            padding: 15px;
+            margin: 0 auto 30px auto;
+        }
+
+        &__item-avatar {
+            width: 140px;
+            height: 140px;
+            overflow: hidden;
+            border-radius: 50%;
+            margin: 0 15px 0 0;
+            flex-shrink: 0;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__item-info {
+            position: relative;
+        }
+
+        &__item-name {
+            p {
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 25px;
+            }
+        }
+
+        &__item-body {
+            position: absolute;
+            bottom: 0;
+
+            p {
+                font-size: 16px;
+                margin: 0 0 10px 0;
+            }
         }
     }
 }

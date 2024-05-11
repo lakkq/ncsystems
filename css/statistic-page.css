@@ -22,6 +22,11 @@
 .statistic-page__block1-title::after {
   width: 90%;
 }
+.statistic-page__block1-diagram {
+  min-width: 1000px;
+  width: 100%;
+}
+
 .statistic-diagram__stolbiki {
   height: 400px;
   display: flex;
@@ -213,4 +218,168 @@
 }
 .statistic2-diagram2__item-body p {
   margin: 0 0 10px 0;
+}
+
+.title-ad {
+  display: none;
+}
+
+@media (max-width: 1109px) {
+  .statistic-page__block1-wrapper {
+    overflow: scroll;
+    padding: 0 0 25px 0;
+  }
+  .statistic2-diagram2 {
+    padding: 0 0 0 30px;
+  }
+  .statistic2-diagram2__item {
+    width: 100%;
+    height: 30%;
+    max-width: 410px;
+    border-radius: 30px;
+    padding: 15px;
+    margin: 0 0 30px 0;
+  }
+  .statistic2-diagram2__item-avatar {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 15px 0 0;
+    flex-shrink: 0;
+    align-self: center;
+  }
+  .statistic2-diagram2__item-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .statistic2-diagram2__item-info {
+    position: relative;
+  }
+  .statistic2-diagram2__item-name p {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25px;
+  }
+  .statistic2-diagram2__item-body {
+    position: absolute;
+    bottom: 0;
+  }
+  .statistic2-diagram2__item-body p {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+  }
+}
+@media (max-width: 768px) {
+  .statistic-page__header {
+    padding: 0;
+    margin: 0 0 40px;
+    height: 66px;
+  }
+  .statistic-page__header h1 {
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 26px;
+    font-weight: 600;
+  }
+  .statistic-page__block1 {
+    margin: 0 0 60px 0;
+  }
+  .statistic-page__block1-title h2 {
+    text-align: left;
+    left: 0;
+    transform: translate(0, 0);
+    font-size: 24px;
+  }
+  .statistic-page__block1-title::after {
+    width: 90%;
+  }
+  .statistic-page__block2-title h2 {
+    font-size: 24px;
+  }
+  .statistic-page__block2-diagrams {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    margin: 0 0 50px;
+  }
+  .statistic-page__block2-diagram1 {
+    margin: 0 0 40px;
+  }
+  .just-title {
+    display: none;
+  }
+  .title-ad {
+    display: block;
+  }
+  .statistic2-diagram1 {
+    padding: 0 0 0 0;
+  }
+  .statistic2-diagram1__column-wrapper {
+    margin: 0 0 15px;
+  }
+  .statistic2-diagram1__column {
+    height: 58px;
+  }
+  .statistic2-diagram1__column p {
+    padding: 0 10px 0 20px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 120%;
+  }
+  .statistic2-diagram1__column-count {
+    width: 30px;
+  }
+  .statistic2-diagram1__column-count p {
+    width: 50px;
+    top: 50%;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 42px;
+    transform: rotate(90deg) translate(-45%, 15px);
+  }
+  .statistic2-diagram1::after {
+    display: none;
+  }
+  .statistic2-diagram2 {
+    padding: 0 0 0;
+  }
+  .statistic2-diagram2__item {
+    width: 100%;
+    max-width: 410px;
+    border-radius: 30px;
+    padding: 15px;
+    margin: 0 auto 30px auto;
+  }
+  .statistic2-diagram2__item-avatar {
+    width: 140px;
+    height: 140px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 15px 0 0;
+    flex-shrink: 0;
+  }
+  .statistic2-diagram2__item-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .statistic2-diagram2__item-info {
+    position: relative;
+  }
+  .statistic2-diagram2__item-name p {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25px;
+  }
+  .statistic2-diagram2__item-body {
+    position: absolute;
+    bottom: 0;
+  }
+  .statistic2-diagram2__item-body p {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+  }
 }
