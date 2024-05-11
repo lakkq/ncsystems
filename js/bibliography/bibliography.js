@@ -137,6 +137,9 @@ document.querySelector('#lastPage').addEventListener('click', () => {
 document.querySelector('#statistic-btn').addEventListener('mouseenter', () => {
     document.querySelector('#statistic-sign').style.opacity = '1';
 })
+document.querySelector('#statistic-sign').addEventListener('mouseenter', () => {
+    document.querySelector('#statistic-sign').style.opacity = '0';
+})
 document.querySelector('#statistic-btn').addEventListener('mouseleave', () => {
     document.querySelector('#statistic-sign').style.opacity = '0';
 })
