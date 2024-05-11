@@ -91,10 +91,11 @@
     &__row2 {
         display: flex;
         align-items: center;
+        height: 100%;
     }
 
     &__logo {
-        margin: 0 60px 0 0;
+        padding: 0 60px 0 0;
         position: relative;
 
         a {
@@ -110,11 +111,11 @@
             content: ' ';
             background-color: rgb(154, 154, 154);
             width: 1px;
-            height: 109px;
+            height: 80%;
             position: absolute;
             display: inline-block;
-            top: 25%;
-            right: -60px;
+            top: 10%;
+            right: 0;
         }
     }
 
@@ -185,7 +186,7 @@
         }
 
         &__logo {
-            margin: 0 45px 0 0;
+            padding: 0 45px 0 0;
 
             img {
                 width: 140px;
@@ -193,12 +194,12 @@
             }
         }
 
-        &__logo::after {
-            width: 1px;
-            height: 76px;
-            top: 25%;
-            right: -45px;
-        }
+        // &__logo::after {
+        //     width: 1px;
+        //     height: 76px;
+        //     top: 25%;
+        //     right: -45px;
+        // }
 
         &__title {
             margin: 0 0 0 60px;
@@ -263,7 +264,7 @@
         }
 
         &__logo {
-            margin: 0 30px 0 0;
+            padding: 0 30px 0 0;
 
             img {
                 width: 120px;
@@ -271,18 +272,18 @@
             }
         }
 
-        &__logo::after {
-            width: 1px;
-            height: 76px;
-            top: 25%;
-            right: -45px;
-        }
+        // &__logo::after {
+        //     width: 1px;
+        //     height: 76px;
+        //     top: 25%;
+        //     right: -45px;
+        // }
 
         &__title {
             margin: 0 0 0 30px;
 
             p {
-                font-size: 18px;
+                font-size: 22px;
                 line-height: 30px;
             }
         }
@@ -299,27 +300,24 @@
             height: 110px;
         }
 
-        &__logo {
-            margin: 0 10px 0 0;
-
-            img {
-                width: 100px;
-                height: 100px;
-            }
+        &__row2 {
+            height: 110px;
         }
 
-        &__logo::after {
-            width: 1px;
-            height: 58px;
-            top: 25%;
-            right: -10px;
+        &__logo {
+            padding: 0 10px 0 0;
+
+            img {
+                width: 70px;
+                height: 70px;
+            }
         }
 
         &__title {
             margin: 0 0 0 10px;
 
             p {
-                font-size: 16px;
+                font-size: 20px;
                 line-height: 30px;
             }
         }
@@ -332,8 +330,8 @@
 
 
             p {
-                font-size: 14px;
-                line-height: 30px;
+                font-size: 18px;
+                line-height: 20px;
             }
         }
     }

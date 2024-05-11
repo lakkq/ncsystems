@@ -132,6 +132,9 @@
   font-size: 16px;
   line-height: 20px;
   padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .main-menu__row li .sub-menu li a::after {
   content: " ";
@@ -503,7 +506,7 @@
 }
 @media (max-width: 495px) {
   .main-menu__bottom {
-    height: 20px;
+    height: 10px;
     padding: 0 0 0 0;
   }
   .main-menu__bottom .header__menu {

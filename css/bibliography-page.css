@@ -686,3 +686,335 @@
   box-shadow: rgb(90, 0, 0) 0px 0px 20px inset;
   outline: rgba(90, 0, 0, 0.8) solid 2px;
 }
+
+@media (max-width: 768px) {
+  .bibliography-page__header {
+    height: 66px;
+  }
+  .bibliography-page__header-row {
+    height: 66px;
+  }
+  .bibliography-page__header-title h1 {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 56px;
+  }
+  .bibliography-page__header-button a {
+    padding: 0 10px;
+    margin: 0 -10px 0 0;
+  }
+  .bibliography-page__header-button a img {
+    width: 40px;
+    height: 40px;
+  }
+  .bibliography-page .bibliography-page__all-articles {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .bibliography-page__main {
+    padding: 50px 0 40px;
+  }
+  .main-title {
+    margin: 0 0 35px 0;
+  }
+  .main-title h2 {
+    font-size: 25px;
+    font-weight: 700;
+    left: 0;
+    transform: translate(0, 0);
+  }
+  .bibliography-page__articles {
+    min-height: 100px;
+  }
+  .bibliography-page__article {
+    height: 50px;
+    margin: 0 -10px;
+    padding: 0 10px;
+  }
+  .bibliography-page__article-head {
+    min-height: 50px;
+  }
+  .bibliography-page__article-arrow {
+    top: 20px;
+  }
+  .bibliography-page__article-title {
+    margin: 0 0 0 24px;
+    font-size: 18px;
+    font-weight: 550;
+    line-height: 140%;
+  }
+  .bibliography-page__article-inf-publ {
+    margin: 0px 0 0 20px;
+  }
+  .bibliography-page__article-indexator {
+    font-size: 18px;
+    font-weight: 800;
+  }
+  .active-article-title {
+    margin: 12.5px 0 12.5px 24px;
+  }
+  .bibliography__filter {
+    transform: translate(250px, 0);
+    top: 110%;
+  }
+  .bibliography__filter-active {
+    transform: translate(0, 0);
+  }
+  .bibliography__filter-button {
+    height: 75px;
+    width: 50px;
+    border-radius: 25px 0 0 25px;
+  }
+  .bibliography__filter-button img {
+    width: 37px;
+    height: 37px;
+  }
+  .bibliography__filter-button-close .triangle {
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid rgb(255, 255, 255);
+  }
+  .bibliography__filter-body {
+    border-radius: 0 0 0 10px;
+  }
+  .bibliography__filter-item {
+    height: 80px;
+    width: 250px;
+  }
+  .bibliography__filter-item h3 {
+    font-size: 20px;
+  }
+  .bibliography__filter-citied {
+    height: 50px;
+    padding: 0 10px;
+  }
+  .bibliography__filter-citied label {
+    display: block;
+    font-size: 18px;
+    font-weight: 550;
+    margin: 0 7px 0 0;
+  }
+  .bibliography__filter-citied input {
+    width: 20px;
+    height: 20px;
+  }
+  .bibliography__filter-subitem {
+    position: absolute;
+    width: 250px;
+  }
+  .bibliography__filter-authors-list {
+    max-height: 350px;
+    padding: 5px 7px;
+    transition-duration: 500ms;
+    margin: 0 0 15px 0;
+  }
+  .bibliography__filter-authors-list li {
+    margin: 0 0 10px 0;
+  }
+  .bibliography__filter-authors-list li p {
+    margin: 0 0 0 10px;
+    font-size: 17px;
+  }
+  .bibliography__filter-authors-list li .checkbox {
+    width: 20px;
+    height: 20px;
+  }
+  .bibliography__filter-authors-princip div input {
+    margin: 0 5px 0 0;
+    width: 20px;
+    height: 20px;
+  }
+  .bibliography__filter-period-list p {
+    margin: 0 0 20px 0;
+  }
+  .bibliography__filter-period-list .input-year {
+    margin: 0 0 15px 0;
+  }
+}
+@media (max-width: 495px) {
+  .bibliography-page__header {
+    height: 50px;
+  }
+  .bibliography-page__header-row {
+    height: 50px;
+  }
+  .bibliography-page__header-title h1 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 56px;
+  }
+  .bibliography-page__header-button a {
+    padding: 0 10px;
+    margin: 0 -10px 0 0;
+  }
+  .bibliography-page__header-button a img {
+    width: 30px;
+    height: 30px;
+  }
+  .bibliography-page .bibliography-page__all-articles {
+    bottom: -20px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .bibliography-page__main {
+    padding: 40px 0 40px;
+  }
+  .main-title {
+    margin: 0 0 35px 0;
+  }
+  .main-title h2 {
+    font-size: 20px;
+    font-weight: 700;
+    left: 0;
+    transform: translate(0, 0);
+  }
+  .bibliography-page__articles {
+    min-height: 100px;
+  }
+  .bibliography-page__article {
+    height: 50px;
+    margin: 0 -10px;
+    padding: 0 10px;
+  }
+  .bibliography-page__article-head {
+    min-height: 50px;
+  }
+  .bibliography-page__article-arrow {
+    top: 20px;
+  }
+  .bibliography-page__article-title {
+    margin: 0 0 0 24px;
+    font-size: 16px;
+    font-weight: 550;
+    line-height: 140%;
+  }
+  .bibliography-page__article-info {
+    padding: 0 40px 20px;
+    font-size: 14px;
+  }
+  .bibliography-page__article-inf-publ {
+    margin: 0px 0 0 20px;
+  }
+  .bibliography-page__article-indexator {
+    font-size: 16px;
+    font-weight: 800;
+  }
+  .bibliography-page__article-year {
+    font-size: 14px;
+  }
+  .active-article-title {
+    margin: 12.5px 0 12.5px 24px;
+  }
+  .bibliography__filter {
+    transform: translate(200px, 0);
+    top: 110%;
+  }
+  .bibliography__filter-active {
+    transform: translate(0, 0);
+  }
+  .bibliography__filter-button {
+    height: 75px;
+    width: 50px;
+    border-radius: 25px 0 0 25px;
+  }
+  .bibliography__filter-button img {
+    width: 32px;
+    height: 32px;
+  }
+  .bibliography__filter-button-close .triangle {
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid rgb(255, 255, 255);
+  }
+  .bibliography__filter-body {
+    border-radius: 0 0 0 10px;
+  }
+  .bibliography__filter-item {
+    height: 80px;
+    width: 200px;
+  }
+  .bibliography__filter-item h3 {
+    font-size: 18px;
+  }
+  .bibliography__filter-citied {
+    height: 50px;
+    padding: 0 10px;
+  }
+  .bibliography__filter-citied label {
+    display: block;
+    font-size: 16px;
+    font-weight: 550;
+    margin: 0 7px 0 0;
+  }
+  .bibliography__filter-citied input {
+    width: 30px;
+    height: 30px;
+  }
+  .bibliography__filter-subitem {
+    position: absolute;
+    width: 200px;
+  }
+  .bibliography__filter-subitem p {
+    font-size: 16px;
+  }
+  .bibliography__filter-authors-list {
+    max-height: 350px;
+    padding: 5px 7px;
+    transition-duration: 500ms;
+    margin: 0 0 15px 0;
+  }
+  .bibliography__filter-authors-list li {
+    margin: 0 0 10px 0;
+  }
+  .bibliography__filter-authors-list li p {
+    margin: 0 0 0 10px;
+    font-size: 15px;
+  }
+  .bibliography__filter-authors-list li .checkbox {
+    width: 20px;
+    height: 20px;
+  }
+  .bibliography__filter-authors-princip div input {
+    margin: 0 5px 0 0;
+    width: 20px;
+    height: 20px;
+  }
+  .bibliography__filter-period-list p {
+    margin: 0 0 20px 0;
+  }
+  .bibliography__filter-period-list .input-year {
+    margin: 0 0 15px 0;
+  }
+}
+@media (max-width: 400px) {
+  .bibliography-page__main {
+    padding: 80px 0 40px;
+  }
+  .bibliography__filter-subitem {
+    top: 100%;
+    right: 0;
+    width: 200px;
+    z-index: 100;
+    background: rgb(240, 240, 240);
+  }
+  .bibliography__filter-subitem p {
+    font-size: 16px;
+  }
+  .bibliography__filter-subitem::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 6px;
+    width: 100%;
+  }
+  .bibliography__filter-subitem::after {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    height: 6px;
+    width: 100%;
+  }
+  .bibliography__filter-item:hover h3::before {
+    display: none;
+  }
+}

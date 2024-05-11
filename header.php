@@ -75,13 +75,6 @@
 					)
 				); ?>
 				<div class="main-menu__bottom">
-					<div class="header__menu">
-						<?php wp_nav_menu(
-							array(
-								'theme_location' => 'topMenu'
-							)
-						); ?>
-					</div>
 					<div class="main-menu__button" id="main-menu-button">
 						<img src="<?php echo get_template_directory_uri() . "/img/arrow-1.svg" ?>" alt="">
 					</div>
