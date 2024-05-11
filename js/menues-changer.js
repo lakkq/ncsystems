@@ -17,7 +17,7 @@ function changeBibliographyMenues() {
         document.querySelector('.menues__btn-title').style.left = 'auto';
         document.querySelector('.menues__btn-title').style.right = '0';
         if (window.innerWidth < 1024) {
-            document.querySelector('.menues__btn-title').style.transform = 'rotate(-90deg) scale(-1, 1) translate(0, 10px)';
+            document.querySelector('.menues__btn-title').style.transform = 'rotate(-90deg) scale(-1, 1) translate(0, 30px)';
         }
     }, 300);
 
