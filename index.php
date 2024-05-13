@@ -28,36 +28,41 @@ get_header();
 					<h1>Новости</h1>
 				</div>
 				<div class="news-articles__row">
-					<?php if (have_posts()): ?>
-						<?php for ($i = 0; $i < 4; $i++):
-							the_post(); ?>
-							<?php if (in_category('Новости')) { ?>
-								<article class="article">
-									<div class="article__row">
-										<div class="article__data">
-											<p>
-												<?php the_time('F jS, Y') ?>
-											</p>
-										</div>
-										<div class="article__title">
-											<p>
-												<?php the_title(); ?>
-											</p>
-										</div>
-										<div class="article__button">
-											<a href="<?php the_permalink() ?>">
-												<p>Подробнее</p>
-											</a>
-										</div>
-									</div>
-									<div id="NewsTrigger"></div>
-								</article>
-							<?php } ?>
-						<?php endfor; ?>
-					<?php else: ?>
-						<p>Нет постов в цикле.</p>
-					<?php endif; ?>
+					<?php
+					global $post;
+					$myposts = get_posts([
+						'posts_per_page' => 4,
+						'category_name' => 'Новости',
+					]);
+					foreach ($myposts as $post) {
+						setup_postdata($post);
+						?>
+						<article class="article">
+							<div class="article__row">
+								<div class="article__data">
+									<p>
+										<?php the_time('F jS, Y') ?>
+									</p>
+								</div>
+								<div class="article__title">
+									<p>
+										<?php the_title(); ?>
+									</p>
+								</div>
+								<div class="article__button">
+									<a href="<?php the_permalink() ?>">
+										<p>Подробнее</p>
+									</a>
+								</div>
+							</div>
+							<div id="NewsTrigger"></div>
+						</article>
+						<?php
+					}
+					wp_reset_postdata();
+					?>
 				</div>
+
 			</div>
 			<div class="section-one__SMI">
 				<div class="section-one__SMI-title section-one__title">

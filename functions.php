@@ -180,6 +180,59 @@ if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+function custom_category_posts_shortcode($atts)
+{
+	$atts = shortcode_atts(
+		array(
+			'category' => '',
+			'img' => 1,
+		), $atts);
+
+	$category_slug = $atts['category'];
+	$has_image = $atts['img'];
+	$category_id = get_cat_ID($category_slug);
+
+	$args = array(
+		'cat' => $category_id,
+		'posts_per_page' => -1,
+	);
+
+	$category_posts = new WP_Query($args);
+
+	$output = '<div class="singles-list">';
+	if ($category_posts->have_posts()) {
+		while ($category_posts->have_posts()) {
+			$category_posts->the_post();
+			if ($category_slug != 'СМИ о нас') {
+				$output .=
+				'<div class="single">
+					<a href="' . get_permalink() . '">
+						 <div class="single__title"><p>' . get_the_title() . '</p></div>
+						<div class="single__img-cont">
+						' . get_the_post_thumbnail() . '
+						</div>
+					</a>
+				</div>';
+			} else {
+				$output .=
+				'<div class="single-SMI">
+					<a href="' . get_field('url') . '">
+						 <div class="single-SMI__title"><p>' . get_the_title() . '</p></div>
+					</a>
+				</div>';
+			}
+		}
+	} else {
+		$output .= '<div>No posts found</div>';
+	}
+	$output .= '</div>';
+
+	wp_reset_postdata();
+
+	return $output;
+}
+add_shortcode('category_posts', 'custom_category_posts_shortcode');
+
 add_action('wp_enqueue_scripts', 'addStyles');
 function addStyles()
 {
@@ -216,17 +269,19 @@ function addScripts()
 		wp_enqueue_script('statistic-functions', get_template_directory_uri() . '/js/statistics/functions.js');
 		wp_enqueue_script('statistics', get_template_directory_uri() . '/js/statistics/statistics.js');
 	}
-	
-	$custom_query = new WP_Query(array(
-		'post_type' => 'staff',
-		'posts_per_page' => -1, // Получить все записи
-	));
-	
+
+	$custom_query = new WP_Query(
+		array(
+			'post_type' => 'staff',
+			'posts_per_page' => -1, // Получить все записи
+		)
+	);
+
 	$data_to_pass = array();
 	if ($custom_query->have_posts()) {
 		while ($custom_query->have_posts()) {
 			$custom_query->the_post();
-	
+
 			// Получаем кастомные поля
 			$inicials = get_post_meta(get_the_ID(), 'initials', true);
 			$id = get_post_meta(get_the_ID(), 'id', true);
@@ -247,21 +302,23 @@ function addScripts()
 			);
 		}
 	}
-	
+
 	// Сброс данных поста
 	wp_reset_postdata();
 	wp_localize_script('statistics', 'authorsArray', $data_to_pass);
 
-	$articles = new WP_Query(array(
-		'post_type' => 'article',
-		'posts_per_page' => -1, // Получить все записи
-	));
+	$articles = new WP_Query(
+		array(
+			'post_type' => 'article',
+			'posts_per_page' => -1, // Получить все записи
+		)
+	);
 
 	$aricles_to_pass = array();
 	if ($articles->have_posts()) {
 		while ($articles->have_posts()) {
 			$articles->the_post();
-	
+
 			// Получаем кастомные поля
 			$authors = get_post_meta(get_the_ID(), 'authors', true);
 			$id_authors = get_post_meta(get_the_ID(), 'id_authors', true);
@@ -401,7 +458,5 @@ function register_post_types()
 		'query_var' => true,
 	]);
 }
-
-
 
 
