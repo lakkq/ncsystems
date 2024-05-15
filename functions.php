@@ -233,6 +233,18 @@ function custom_category_posts_shortcode($atts)
 }
 add_shortcode('category_posts', 'custom_category_posts_shortcode');
 
+function staff_shortcode($atts)
+{
+	$atts = shortcode_atts(
+		array(
+			'category' => '',
+			'img' => 1,
+		), $atts);
+
+	return '<div class="staff-page_list" id="staff"></div>';
+}
+add_shortcode('staff', 'staff_shortcode');
+
 add_action('wp_enqueue_scripts', 'addStyles');
 function addStyles()
 {
@@ -246,6 +258,7 @@ function addStyles()
 	wp_enqueue_style('footer', get_template_directory_uri() . '/css/footer.css');
 	wp_enqueue_style('page-bibliography', get_template_directory_uri() . '/css/bibliography-page.css');
 	wp_enqueue_style('page-statistic', get_template_directory_uri() . '/css/statistic-page.css');
+	wp_enqueue_style('page-staff', get_template_directory_uri() . '/css/staff.css');
 }
 
 add_action('wp_footer', 'addScripts');
@@ -270,6 +283,10 @@ function addScripts()
 		wp_enqueue_script('statistics', get_template_directory_uri() . '/js/statistics/statistics.js');
 	}
 
+	if (is_page('Сотрудники')) {
+		wp_enqueue_script('staff', get_template_directory_uri() . '/js/staff/staff.js');
+	}
+
 	$custom_query = new WP_Query(
 		array(
 			'post_type' => 'staff',
@@ -289,6 +306,9 @@ function addScripts()
 			$avatarUrl = get_post_meta(get_the_ID(), 'avatarUrl', true);
 			$allCitied = get_post_meta(get_the_ID(), 'allCitied', true);
 			$mostPopular = get_post_meta(get_the_ID(), 'mostSitied', true);
+			$experience = get_post_meta(get_the_ID(), 'experience', true);
+			$degree = get_post_meta(get_the_ID(), 'degree', true);
+			$position = get_post_meta(get_the_ID(), 'position', true);
 
 			$data_to_pass[] = array(
 				'name' => get_the_title(),
@@ -298,6 +318,9 @@ function addScripts()
 				'avatarUrl' => $avatarUrl,
 				'allCitied' => $allCitied,
 				'mostCitied' => $mostPopular,
+				'experience' => $experience,
+				'position' => $position,
+				'degree' => $degree,
 				// Добавьте другие элементы записи, которые вам нужны
 			);
 		}
@@ -306,6 +329,7 @@ function addScripts()
 	// Сброс данных поста
 	wp_reset_postdata();
 	wp_localize_script('statistics', 'authorsArray', $data_to_pass);
+	wp_localize_script('staff', 'authorsArray', $data_to_pass);
 
 	$articles = new WP_Query(
 		array(
