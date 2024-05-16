@@ -2,21 +2,40 @@
     position: relative;
     width: 100%;
     &__row {
-        display: flex;
+        display: grid;
+        grid-template-columns: minmax(180px, 25%) auto;
+        grid-template-areas:
+            'image name'
+            'image info';
+        gap: 30px;
         height: 100%;
+        &:has(img[src="null"]) {
+            grid-template-columns: auto;
+            grid-template-areas:
+                'name'
+                'info';
+        }
+        &:has(img[src=""]) {
+            grid-template-columns: auto;
+            grid-template-areas:
+                'name'
+                'info';
+        }
     }
+
+    
 
     &__img {
         height: 100%;
-        width: 25%;
-        margin: 0 40px 0 0;
+        width: 100%;
+        grid-area: image;
 
         img {
             border-radius: 30px;
             border: solid 3px rgb(25, 33, 94);
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            max-width: 340px;
         }
 
         img[src="null"] {
@@ -47,7 +66,7 @@
 
     &__name {
         padding: 20px 0 0 0;
-        margin: 0 0 30px 0;
+        grid-area: name;
 
         p {
             font-size: 30px;
@@ -56,6 +75,7 @@
     }
 
     &__data {
+        grid-area: info;
         p {
             margin: 0 0 10px 0;
         }
@@ -93,5 +113,105 @@
 
     &__articles {
         margin: 0 0 30px 0;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .profile {
+        &__position {
+            p {
+                font-size: 22px;
+                color: white;
+                font-weight: 600;
+            }
+        }
+
+        &__name {
+
+            p {
+                font-size: 24px;
+            }
+        }
+
+        &__data {
+            p {
+                font-size: 16px;
+            }
+        }
+
+        &__button {
+
+            a {
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 580px) {
+    .profile {
+        &__row {
+            display: grid;
+            grid-template-areas:
+                'image name'
+                'info info';
+            grid-template-columns: minmax(130px, 25%) auto;
+
+            &:has(img[src="null"]) {
+                grid-template-columns: auto;
+                grid-template-areas:
+                    'name'
+                    'info';
+            }
+            &:has(img[src=""]) {
+                grid-template-columns: auto;
+                grid-template-areas:
+                    'name'
+                    'info';
+            }
+        }
+
+        &__position {
+            p {
+                font-size: 18px;
+                color: white;
+                font-weight: 600;
+            }
+        }
+
+        &__img {}
+
+        &__name {
+
+            p {
+                font-size: 22px;
+            }
+        }
+
+        &__data {
+
+            p {
+                font-size: 16px;
+            }
+        }
+
+        &__button {
+
+            a {
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+@media (max-width: 365px) {
+    .profile {
+        &__row {
+            grid-template-columns: minmax(90px, 25%) auto;
+        }
     }
 }

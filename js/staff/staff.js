@@ -55,14 +55,16 @@ authorsArray.forEach(worker => {
 
     staffContainer.insertAdjacentHTML('beforeend', `
         <div class="worker zavkaf">
-            <div class="worker__row">
+            
+                <div class="worker__position">
+                    <p>${worker.position[0]}</p>
+                </div>
+                <div class="worker__row">
                 <div class="worker__img">
                     <img src="${worker.avatarUrl}" alt="">
                 </div>
-                <div class="worker__info">
-                    <div class="worker__position">
-                        <p>${worker.position[0]}</p>
-                    </div>
+                
+               
                     <div class="worker__name">
                         <p>${worker.name}</p>
                     </div>
@@ -72,11 +74,11 @@ authorsArray.forEach(worker => {
                         <p><b>Опыт работы: </b>${worker.experience} лет</p>
                         <p><b>E-mail: </b><a href="mailto:${worker.email}">${worker.email}</a></p>
                     </div>
-                </div>
+                    </div>
                 <div class="worker__button">
                     <a href="${worker.link}">Профиль</a>
                 </div>
-            </div>
+            
         </div>
     `)
 

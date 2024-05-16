@@ -8,7 +8,7 @@
   color: rgb(255, 255, 255);
   font-size: 36px;
   font-weight: 600;
-  line-height: 56px;
+  line-height: 30px;
   letter-spacing: 0%;
 }
 
@@ -20,6 +20,15 @@
 }
 .page-body .wp-block-separator {
   margin: 0;
+}
+.page-body h1 {
+  font-size: 28px;
+}
+.page-body h2 {
+  font-size: 25px;
+}
+.page-body h3 {
+  font-size: 22px;
 }
 .page-body p {
   font-size: 18px;
@@ -77,12 +86,6 @@
   line-height: 140%;
   margin: 15px 0 15px 0;
   position: relative;
-}
-.page-body h2.wp-block-heading {
-  font-size: 24px;
-}
-.page-body h3.wp-block-heading {
-  font-size: 20px;
 }
 .page-body .wp-block-image {
   min-width: fit-content;
@@ -296,4 +299,39 @@
   font-size: 20px;
   font-weight: 450;
   line-height: 135%;
+}
+
+@media (max-width: 768px) {
+  .page-title h1 {
+    font-size: 26px;
+  }
+  .page-body p {
+    font-size: 16px;
+  }
+  .page-body h1 {
+    font-size: 24px;
+  }
+  .page-body h2 {
+    font-size: 22px;
+  }
+  .page-body h3 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 495px) {
+  .page-title h1 {
+    font-size: 24px;
+  }
+  .page-body p {
+    font-size: 16px;
+  }
+  .page-body h1 {
+    font-size: 24px;
+  }
+  .page-body h2 {
+    font-size: 22px;
+  }
+  .page-body h3 {
+    font-size: 20px;
+  }
 }

@@ -13,20 +13,18 @@
                     <div class="profile__img">
                         <img src="<?php the_field('avatarUrl') ?>" alt="">
                     </div>
-                    <div class="profile__info">
-                        <div class="profile__name">
-                            <p><?php the_title() ?></p>
-                        </div>
-                        <div class="profile__data">
-                            <p><b>Научная степень: </b><?php the_field('degree') ?></p>
-                            <p><b>Должность: </b><?php the_field('position') ?></p>
-                            <p><b>Опыт работы: </b><?php the_field('experience') ?> лет</p>
-                            <p><b>E-mail: </b><a
-                                    href="mailto:<?php the_field('e-mail') ?>"><?php the_field('e-mail') ?></a></p>
-                            <p><b>Опубликовано работ: </b><?php the_field('publications') ?></p>
-                            <p><b>Всего цитирований: </b><?php the_field('allCitied') ?></p>
-                            <p><b>Самая цитируемая работа: </b><?php the_field('mostSitied') ?></p>
-                        </div>
+                    <div class="profile__name">
+                        <p><?php the_title() ?></p>
+                    </div>
+                    <div class="profile__data">
+                        <p><b>Научная степень: </b><?php the_field('degree') ?></p>
+                        <p><b>Должность: </b><?php the_field('position') ?></p>
+                        <p><b>Опыт работы: </b><?php the_field('experience') ?> лет</p>
+                        <p><b>E-mail: </b><a href="mailto:<?php the_field('e-mail') ?>"><?php the_field('e-mail') ?></a>
+                        </p>
+                        <p><b>Опубликовано работ: </b><?php the_field('publications') ?></p>
+                        <p><b>Всего цитирований: </b><?php the_field('allCitied') ?></p>
+                        <p><b>Самая цитируемая работа: </b><?php the_field('mostSitied') ?></p>
                     </div>
                 </div>
                 <div class="profile__content">
@@ -36,9 +34,9 @@
         </div>
     </section>
     <div class="container">
-    <div class="bibliography-page__main-title main-title">
-        <h2>Научные статьи и публикации</h2>
-    </div>
+        <div class="bibliography-page__main-title main-title">
+            <h2>Научные статьи и публикации</h2>
+        </div>
         <div id="bibliography-page__articles" class="profile__articles">
         </div>
         <div class="bibliography-page__pages">

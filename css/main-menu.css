@@ -374,6 +374,12 @@
     top: 0;
     left: 10%;
   }
+  .main-menu__row li .sub-menu li:hover ul {
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
   .main-menu__row li {
     text-align: center;
     width: 100%;

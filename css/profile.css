@@ -3,20 +3,31 @@
   width: 100%;
 }
 .profile__row {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(180px, 25%) auto;
+  grid-template-areas: "image name" "image info";
+  gap: 30px;
   height: 100%;
+}
+.profile__row:has(img[src=null]) {
+  grid-template-columns: auto;
+  grid-template-areas: "name" "info";
+}
+.profile__row:has(img[src=""]) {
+  grid-template-columns: auto;
+  grid-template-areas: "name" "info";
 }
 .profile__img {
   height: 100%;
-  width: 25%;
-  margin: 0 40px 0 0;
+  width: 100%;
+  grid-area: image;
 }
 .profile__img img {
   border-radius: 30px;
   border: solid 3px rgb(25, 33, 94);
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  max-width: 340px;
 }
 .profile__img img[src=null] {
   display: none;
@@ -39,11 +50,14 @@
 }
 .profile__name {
   padding: 20px 0 0 0;
-  margin: 0 0 30px 0;
+  grid-area: name;
 }
 .profile__name p {
   font-size: 30px;
   font-weight: 550;
+}
+.profile__data {
+  grid-area: info;
 }
 .profile__data p {
   margin: 0 0 10px 0;
@@ -76,4 +90,57 @@
 }
 .profile__articles {
   margin: 0 0 30px 0;
+}
+
+@media (max-width: 768px) {
+  .profile__position p {
+    font-size: 22px;
+    color: white;
+    font-weight: 600;
+  }
+  .profile__name p {
+    font-size: 24px;
+  }
+  .profile__data p {
+    font-size: 16px;
+  }
+  .profile__button a {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+@media (max-width: 580px) {
+  .profile__row {
+    display: grid;
+    grid-template-areas: "image name" "info info";
+    grid-template-columns: minmax(130px, 25%) auto;
+  }
+  .profile__row:has(img[src=null]) {
+    grid-template-columns: auto;
+    grid-template-areas: "name" "info";
+  }
+  .profile__row:has(img[src=""]) {
+    grid-template-columns: auto;
+    grid-template-areas: "name" "info";
+  }
+  .profile__position p {
+    font-size: 18px;
+    color: white;
+    font-weight: 600;
+  }
+  .profile__name p {
+    font-size: 22px;
+  }
+  .profile__data p {
+    font-size: 16px;
+  }
+  .profile__button a {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+@media (max-width: 365px) {
+  .profile__row {
+    grid-template-columns: minmax(90px, 25%) auto;
+  }
 }
