@@ -105,9 +105,7 @@ function sortPeriod(articles, period) {
     return sortedArticles;
 }
 
-const chunkSize = 50;
-
-function showArticles(articles, page) {
+function showArticles(articles, page, chunkSize = 50) {
     articlesCount.innerHTML = `${articles.length}`;
     if (articles.length > chunkSize) {
         document.querySelector('.bibliography-page__pages').style.display = 'block';

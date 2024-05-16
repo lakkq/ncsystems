@@ -259,6 +259,7 @@ function addStyles()
 	wp_enqueue_style('page-bibliography', get_template_directory_uri() . '/css/bibliography-page.css');
 	wp_enqueue_style('page-statistic', get_template_directory_uri() . '/css/statistic-page.css');
 	wp_enqueue_style('page-staff', get_template_directory_uri() . '/css/staff.css');
+	wp_enqueue_style('profile', get_template_directory_uri() . '/css/profile.css');
 }
 
 add_action('wp_footer', 'addScripts');
@@ -266,6 +267,8 @@ function addScripts()
 {
 	wp_enqueue_script('main-menu', get_template_directory_uri() . '/js/main-menu.js');
 	wp_enqueue_script('footer', get_template_directory_uri() . '/js/footer.js');
+	wp_enqueue_script('artiсles-functions', get_template_directory_uri() . '/js/bibliography/functions.js');
+	wp_enqueue_script('statistic-functions', get_template_directory_uri() . '/js/statistics/functions.js');
 	if (is_front_page()) {
 		wp_enqueue_script('section-1', get_template_directory_uri() . '/js/section-1.js');
 		wp_enqueue_script('menues-changer', get_template_directory_uri() . '/js/menues-changer.js');
@@ -273,18 +276,19 @@ function addScripts()
 	}
 
 	if (is_page('Библиография')) {
-		wp_enqueue_script('artiсles-functions', get_template_directory_uri() . '/js/bibliography/functions.js');
 		wp_enqueue_script('bibliography', get_template_directory_uri() . '/js/bibliography/bibliography.js');
 	}
 
 	if (is_page('Библиографическая статистика')) {
-		wp_enqueue_script('artiсles-functions', get_template_directory_uri() . '/js/bibliography/functions.js');
-		wp_enqueue_script('statistic-functions', get_template_directory_uri() . '/js/statistics/functions.js');
 		wp_enqueue_script('statistics', get_template_directory_uri() . '/js/statistics/statistics.js');
 	}
 
 	if (is_page('Сотрудники')) {
 		wp_enqueue_script('staff', get_template_directory_uri() . '/js/staff/staff.js');
+	}
+
+	if (is_single() && get_post_type()=='staff') {
+		wp_enqueue_script('profile', get_template_directory_uri() . '/js/staff/profile.js');
 	}
 
 	$custom_query = new WP_Query(
@@ -309,6 +313,8 @@ function addScripts()
 			$experience = get_post_meta(get_the_ID(), 'experience', true);
 			$degree = get_post_meta(get_the_ID(), 'degree', true);
 			$position = get_post_meta(get_the_ID(), 'position', true);
+			$email = get_post_meta(get_the_ID(), 'e-mail', true);
+			$link = get_permalink();
 
 			$data_to_pass[] = array(
 				'name' => get_the_title(),
@@ -321,6 +327,8 @@ function addScripts()
 				'experience' => $experience,
 				'position' => $position,
 				'degree' => $degree,
+				'email' => $email,
+				'link' => $link,
 				// Добавьте другие элементы записи, которые вам нужны
 			);
 		}
@@ -369,6 +377,7 @@ function addScripts()
 	wp_reset_postdata();
 	wp_localize_script('bibliography', 'articlesArrayPhp', $articles_to_pass);
 	wp_localize_script('statistics', 'articlesArrayPhp', $articles_to_pass);
+	wp_localize_script('profile', 'articlesArrayPhp', $articles_to_pass);
 }
 
 add_action('after_setup_theme', 'topMenu');
