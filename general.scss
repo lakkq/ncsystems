@@ -140,6 +140,9 @@
     }
 
     .wp-block-file {
+        display: flex;
+        align-items: center;
+
         a {
             &:first-child {
                 font-size: 18px;
@@ -150,6 +153,11 @@
 
                 &:hover {
                     text-decoration: underline rgb(175, 0, 38);
+                }
+
+                mark {
+                    font-size: 16px;
+                    font-weight: 500;
                 }
             }
         }
@@ -248,7 +256,7 @@
     }
 
     .wp-block-group-is-layout-flex {
-        flex-wrap: wrap !important;
+       // flex-wrap: wrap !important;
     }
 }
 
@@ -402,11 +410,11 @@
         h1 {
             font-size: 24px;
         }
-    
+
         h2 {
             font-size: 22px;
         }
-    
+
         h3 {
             font-size: 20px;
         }
@@ -428,13 +436,17 @@
         h1 {
             font-size: 24px;
         }
-    
+
         h2 {
             font-size: 22px;
         }
-    
+
         h3 {
             font-size: 20px;
         }
+    }
+
+    .wp-block-file__button {
+        display: none;
     }
 }

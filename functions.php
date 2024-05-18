@@ -260,6 +260,7 @@ function addStyles()
 	wp_enqueue_style('page-statistic', get_template_directory_uri() . '/css/statistic-page.css');
 	wp_enqueue_style('page-staff', get_template_directory_uri() . '/css/staff.css');
 	wp_enqueue_style('profile', get_template_directory_uri() . '/css/profile.css');
+	wp_enqueue_style('404', get_template_directory_uri() . '/css/404.css');
 }
 
 add_action('wp_footer', 'addScripts');
@@ -275,7 +276,7 @@ function addScripts()
 		wp_enqueue_script('section-2', get_template_directory_uri() . '/js/section-2.js');
 	}
 
-	if (is_page('Библиография')) {
+	if (is_page_template('bibliography.php')) {
 		wp_enqueue_script('bibliography', get_template_directory_uri() . '/js/bibliography/bibliography.js');
 	}
 
@@ -360,6 +361,7 @@ function addScripts()
 			$indexator = get_post_meta(get_the_ID(), 'indexator', true);
 			$year = get_post_meta(get_the_ID(), 'year', true);
 			$id = get_post_meta(get_the_ID(), 'id', true);
+			$link = get_post_meta(get_the_ID(), 'url', true);
 
 			$articles_to_pass[] = array(
 				'title' => get_the_title(),
@@ -370,6 +372,7 @@ function addScripts()
 				'year' => $year,
 				'journal' => $journal,
 				'citiedByCount' => $citied_by_count,
+				'link' => $link,
 				// Добавьте другие элементы записи, которые вам нужны
 			);
 		}

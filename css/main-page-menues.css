@@ -89,8 +89,10 @@
   margin: 0 -50px;
 }
 .teaching__menu ul li {
-  width: 20%;
+  width: auto;
   position: relative;
+  flex-grow: 1;
+  flex-basis: 0;
 }
 .teaching__menu ul li a {
   position: relative;
@@ -166,8 +168,10 @@
   margin: 0 -50px;
 }
 .bibliography__menu ul li {
-  width: 20%;
+  width: auto;
   position: relative;
+  flex-grow: 1;
+  flex-basis: 0;
 }
 .bibliography__menu ul li a {
   position: relative;

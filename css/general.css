@@ -106,6 +106,10 @@
 .page-body p > a:hover {
   text-decoration: underline rgb(175, 0, 38);
 }
+.page-body .wp-block-file {
+  display: flex;
+  align-items: center;
+}
 .page-body .wp-block-file a:first-child {
   font-size: 18px;
   font-weight: 700;
@@ -115,6 +119,10 @@
 }
 .page-body .wp-block-file a:first-child:hover {
   text-decoration: underline rgb(175, 0, 38);
+}
+.page-body .wp-block-file a:first-child mark {
+  font-size: 16px;
+  font-weight: 500;
 }
 .page-body .wp-block-file__button {
   font-size: 16px;
@@ -183,10 +191,6 @@
   margin: 0 auto;
   display: block;
 }
-.page-body .wp-block-group-is-layout-flex {
-  flex-wrap: wrap !important;
-}
-
 .singles-list {
   display: flex;
   flex-wrap: wrap;
@@ -334,5 +338,8 @@
   }
   .page-body h3 {
     font-size: 20px;
+  }
+  .wp-block-file__button {
+    display: none;
   }
 }

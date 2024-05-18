@@ -217,9 +217,13 @@ function drawArticles(articles) {
                                         </span>
                                     </p>
                                 </div>
+                                <div class="bibliography-page__article-link" id="article-link-${i}"></div>
                             </div>
                         </div>
             `);
+            if (articles[i].link) {
+                document.querySelector(`#article-link-${i}`).insertAdjacentHTML('afterbegin', `<a href="${articles[i].link}">Перейти...</a>`);
+            }
         }
         addEventArticles();
     }

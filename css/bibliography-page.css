@@ -190,6 +190,7 @@
   margin: 0 5px 0 0;
 }
 .bibliography-page__article-info {
+  position: relative;
   font-size: 16px;
   font-weight: 400;
   line-height: 140%;
@@ -197,6 +198,20 @@
 }
 .bibliography-page__article-info > div {
   padding: 0 0 10px;
+}
+.bibliography-page__article-link {
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  padding: 0;
+}
+.bibliography-page__article-link a {
+  color: rgb(0, 16, 68);
+  font-weight: 600;
+  text-decoration: underline rgb(0, 16, 68);
+}
+.bibliography-page__article-link a:hover {
+  text-decoration: underline rgb(128, 0, 28);
 }
 .bibliography-page__article-none {
   padding: 30px 0 0 20px;

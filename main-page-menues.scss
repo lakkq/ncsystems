@@ -101,8 +101,10 @@
             margin: 0 -50px;
 
             li {
-                width: 20%;
+                width: auto;
                 position: relative;
+                flex-grow: 1;
+                flex-basis: 0;
 
                 a {
                     position: relative;
@@ -113,6 +115,7 @@
                     text-align: center;
                     transition-duration: 500ms;
                     text-decoration-color: rgb(130, 0, 38);
+                    
 
                     p {
                         position: relative;
@@ -201,8 +204,10 @@
             margin: 0 -50px;
 
             li {
-                width: 20%;
+                width: auto;
                 position: relative;
+                flex-grow: 1;
+                flex-basis: 0;
 
                 a {
                     position: relative;
